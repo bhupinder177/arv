@@ -1,432 +1,184 @@
 @include('layouts.header')
 <!--===Start Revolution Slider===-->
-<div class="int_banner_slider">
-  <div class="banner_box_wrapper">
-    <div class="container-fluid">
-      <div class="row ">
-        <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12 align-self-center">
-          <div class="main_contentblock">
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="swiper_imgbox imgbox1">
-                    <div class="swipper_img">
-                      <h4>Serenity of nature</h4>
-                      <h2>Innovative</h2>
-                      <h3>exterior protection</h3>
-                      <p>Airolam is a young and growing company with commendable 12+
-                        years of experience in the laminates industry.</p>
-                      <a href="#" class="int_btn">View Products <span
-                          class="btn_caret"><i
-                            class="fas fa-caret-right"></i></span></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="swiper_imgbox imgbox2">
-                    <div class="swipper_img">
-                      <h4>Serenity of nature</h4>
-                      <h2>Innovative</h2>
-                      <h3>exterior protection</h3>
-                      <p>Airolam is a young and growing company with commendable 12+
-                        years of experience in the laminates industry.</p>
-                      <a href="#" class="int_btn">View Products <span
-                          class="btn_caret"><i
-                            class="fas fa-caret-right"></i></span></a>
-                    </div>
-                  </div>
-                </div>
+<!-- banner part -->
+<section class="hero-section">
+      <div class="row slider p-0">
+        <div class="hero-img-box2">
 
-              </div>
-            </div>
-          </div>
+                        <div class="hero-text-wrap">
+                            <div class="hero-text">
+                                <div class="container">
+                                    <div class="white-color profes wow fadeInUp" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
+
+                                        <h1 class="title1">
+                                            TEAM ARV-CA
+                                        </h1>
+                                        <p>
+                                           Insolvency Professionals & Restructuring Advisors Insolvency Professionals<br> & Restructuring AdvisorsInsolvency Professionals & Restructuring Advisors
+
+                                        </p>
+                                        <div class="hedr_btn">
+                                        <a class="btn btn-gradient btn-md btn-animated-none btn-one al_btn" href="#" target="_blank" tabindex="-1"> Contact Us  </a>
+                                      </div>
+                                    </div>
+                                </div>
+
+                        </div>
+
+                    </div>
+
         </div>
 
-        <div class="col-xl-8 col-lg-8 col-md-7 align-self-center pr-0">
-          <!--=== Swiper ===-->
-          <div class="main_imgblock">
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="swiper_contbox">
-                    <div class="swipper_conntent">
-                      <img src="{{ asset('front/images/slider1.jpg')}}" class="img-fluid"
-                        alt="images" />
+           <div class="hero-img-box2">
+
+                        <div class="hero-text-wrap">
+                            <div class="hero-text">
+                                <div class="container">
+                                    <div class="white-color profes">
+
+                                        <h1 class="title1">
+                                            TEAM ARV-CA
+                                        </h1>
+                                        <p>
+                                           Insolvency Professionals & Restructuring Advisors Insolvency Professionals<br> & Restructuring AdvisorsInsolvency Professionals & Restructuring Advisors
+
+                                        </p>
+                                     <div class="hedr_btn">
+                                        <a class="btn btn-gradient btn-md btn-animated-none btn-one al_btn" href="#" target="_blank" tabindex="-1"> Contact Us  </a>
+                                      </div>
+
+                                    </div>
+                                </div>
+
+                        </div>
+
                     </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="swiper_contbox">
-                    <div class="swipper_conntent">
-                      <img src="{{ asset('front/images/slider1.jpg')}}" class="img-fluid"
-                        alt="images" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
+
       </div>
-      <!--=== Add Arrows ===-->
-      <div class="banner_navi">
-        <div class="swiper-button-next">Next</div>
-        <div class="swiper-button-prev">Prev</div>
-      </div>
-    </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </section>
+
+    <!-- end -->
+
+<section id="aoutus">
+  <div class="sp">
+  <div class="hding">
+    <h1>About <span>Us</span></h1>
   </div>
 
-</div>
-<!--===End Revolution Slider===-->
-
-</div>
-<!--=== End content ===-->
-
-<!--===Start Service Section===-->
-<div class="int_service_wrapper">
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <div class="int_heading">
-        <h4>Our Products</h4>
-        <h2>Our Latest Collections</h2>
-      </div>
-    </div>
-  </div>
-  <div class="service_box_wrapper">
-    <div class="row no-gutters">
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <a href="#">
-          <div class="service_box serivce_first">
-            <div class="service_img">
-              <img src="{{ asset('front/images/product1.jpg')}}" class="img-fluid" alt="images" />
-            </div>
-            <div class="service_content">
-              <h4>Laminate</h4>
-              <p>Dolore magna aliqua Ut enim ad minim veniam, quis nostrud</p>
-            </div>
-            <div class="service_designation">
-              <h2>Laminate</h2>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <a href="#">
-          <div class="service_box serivce_second">
-            <div class="service_img">
-              <img src="{{ asset('front/images/product2.jpg')}}" class="img-fluid" alt="images" />
-            </div>
-            <div class="service_content">
-              <h4>Plywood</h4>
-              <p>Dolore magna aliqua Ut enim ad minim veniam, quis nostrud</p>
-            </div>
-            <div class="service_designation">
-              <h2>Plywood</h2>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <a href="#">
-          <div class="service_box serivce_first">
-            <div class="service_img">
-              <img src="{{ asset('front/images/product3.jpg')}}" class="img-fluid" alt="images" />
-            </div>
-            <div class="service_content">
-              <h4>Panel</h4>
-              <p>Dolore magna aliqua Ut enim ad minim veniam, quis nostrud</p>
-            </div>
-            <div class="service_designation">
-              <h2>Panel</h2>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <a href="#">
-          <div class="service_box serivce_second">
-            <div class="service_img">
-              <img src="{{ asset('front/images/product4.jpg')}}" class="img-fluid" alt="images" />
-            </div>
-            <div class="service_content">
-              <h4>Exterior Wall Cladding</h4>
-              <p>Dolore magna aliqua Ut enim ad minim veniam, quis nostrud</p>
-            </div>
-            <div class="service_designation">
-              <h2>Exterior Wall Cladding</h2>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
+
+<div class="col-lg-6">
+<div class="leftmg wow fadeInLeft" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
+  <img src="images/about.png" class="">
 </div>
 </div>
-<!--===End Start Service Section===-->
 
 
+<div class="col-lg-6">
+<div class="dec wow fadeInRight" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
 
-<!--===Start Project Section===-->
-<div class="int_project_wrapper">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="int_heading">
-        <h4>Photo Gallery</h4>
-        <h2>Application</h2>
-      </div>
-    </div>
-  </div>
-  <div class="project_box_wrapper">
-    <div class="int_project_gallery text-center">
-      <div class="gallery_container">
-        <div class="gallery_grid row">
-          <div class="col-md-6">
-            <div class="grid-item">
-              <a href="{{ asset('front/images/application1.jpg')}}" class="view">
-                <div class="grid_img">
-                  <img src="{{ asset('front/images/application1.jpg')}}" alt="project-img">
-                </div>
-                <div class="bottom_content">
-                  <h3>Kitchens</h3>
-                </div>
-                <div class="grid_icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px">
-                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                      d="M100.000,51.000 L51.000,51.000 L51.000,100.000 L49.000,100.000 L49.000,51.000 L-0.000,51.000 L-0.000,49.000 L49.000,49.000 L49.000,-0.000 L51.000,-0.000 L51.000,49.000 L100.000,49.000 L100.000,51.000 Z" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="grid-item">
-              <a href="{{ asset('assets/images/application2.jpg')}}" class="view">
-                <div class="grid_img">
-                  <img src="{{ asset('front/images/application2.jpg')}}" alt="project-img">
-                </div>
-                <div class="bottom_content">
-                  <h3>Bathroom</h3>
-                </div>
-                <div class="grid_icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px">
-                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                      d="M100.000,51.000 L51.000,51.000 L51.000,100.000 L49.000,100.000 L49.000,51.000 L-0.000,51.000 L-0.000,49.000 L49.000,49.000 L49.000,-0.000 L51.000,-0.000 L51.000,49.000 L100.000,49.000 L100.000,51.000 Z" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="grid-item">
-              <a href="{{ asset('front/images/application3.jpg')}}" class="view">
-                <div class="grid_img">
-                  <img src="{{ asset('front/images/application3.jpg')}}" alt="project-img">
-                </div>
-                <div class="bottom_content">
-                  <h3>Interiors</h3>
-                </div>
-                <div class="grid_icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px">
-                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                      d="M100.000,51.000 L51.000,51.000 L51.000,100.000 L49.000,100.000 L49.000,51.000 L-0.000,51.000 L-0.000,49.000 L49.000,49.000 L49.000,-0.000 L51.000,-0.000 L51.000,49.000 L100.000,49.000 L100.000,51.000 Z" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="grid-item design">
-              <a href="{{ asset('front/images/application5.jpg')}}" class="view">
-                <div class="grid_img">
-                  <img src="{{ asset('front/images/application5.jpg')}}" alt="project-img">
-                </div>
-                <div class="bottom_content">
-                  <h3>Furniture</h3>
-                </div>
-                <div class="grid_icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px">
-                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                      d="M100.000,51.000 L51.000,51.000 L51.000,100.000 L49.000,100.000 L49.000,51.000 L-0.000,51.000 L-0.000,49.000 L49.000,49.000 L49.000,-0.000 L51.000,-0.000 L51.000,49.000 L100.000,49.000 L100.000,51.000 Z" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="grid-item">
-              <a href="{{ asset('front/images/application2.jpg')}}" class="view">
-                <div class="grid_img">
-                  <img src="{{ asset('front/images/application2.jpg')}}" alt="project-img">
-                </div>
-                <div class="bottom_content">
-                  <h3>Facades or Exterior</h3>
-                </div>
-                <div class="grid_icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px">
-                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                      d="M100.000,51.000 L51.000,51.000 L51.000,100.000 L49.000,100.000 L49.000,51.000 L-0.000,51.000 L-0.000,49.000 L49.000,49.000 L49.000,-0.000 L51.000,-0.000 L51.000,49.000 L100.000,49.000 L100.000,51.000 Z" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="grid-item">
-              <a href="{{ asset('front/images/application4.jpg')}}" class="view">
-                <div class="grid_img">
-                  <img src="{{ asset('front/images/application4.jpg')}}" alt="project-img">
-                </div>
-                <div class="bottom_content">
-                  <h3>Office</h3>
-                </div>
-                <div class="grid_icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px">
-                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                      d="M100.000,51.000 L51.000,51.000 L51.000,100.000 L49.000,100.000 L49.000,51.000 L-0.000,51.000 L-0.000,49.000 L49.000,49.000 L49.000,-0.000 L51.000,-0.000 L51.000,49.000 L100.000,49.000 L100.000,51.000 Z" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<p>Team ARV-CA is working towards excellence in the Insolvency & Bankruptcy space and believe in pursuing business through innovation and technology. Our team comes with several years of industry experience and comprise of a highly motivated specialists.
+The entity was established with its key objective of providing all kind of professional services, assistance, consultancy and to act as Insolvency Professionals in cases related to Insolvency and Bankruptcy Code, 2016.
+Team ARV-CA consisting of Insolvency Professionals, Chartered Accountants, Company Secretaries, Advocates, Ex-Bankers, Registered Valuer’s and persons with managerial capabilities is already working together under the banner of ARV-CA.
+Our Mohali head office is spread over a sprawling 8000+ Sq. ft. area, fully equipped with state-of-art facilities like High-speed internet connections, Video Conferencing facilities, Conference room, COC meeting room etc.
+</p>
+<div class="buton_about">
+  <a class="btn btn-gradient btn-md btn-animated-none btn-one al_btn" href="#" target="_blank" tabindex="-1"> Vew More  </a>
+</div>
+
 </div>
 </div>
-<!--===End Start Project Section===-->
+
+  </div>
 
 
 
-<div class="int_premium ">
-			<div class="container">
 
-				<div class="int_all_service2">
-					<div class="row justify-content-center">
-						<div class="col-12">
-							<div class="int_heading">
-								<h2>Tactile Aesthetics</h2>
-								<p>More than 60 years of experience in creating the perfect combination between decor, colour, design and texture.
-									Thanks to continuous innovation, Arpa’s finishes interpret in a unique way the material dimension of high pressure laminates.
-								</p>
-									<a href="#" class="int_btn">Discover our premium finishes</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+</div>
+</div>
+</section>
+
+<section id="service">
+    <div class="sp">
+
+  <div class="container">
+    <div class="row">
+      <div class="hding">
+    <h1 class="hdcolor">Our  <span class="hdcolor">Service</span></h1>
+    <p>I am a professional in several areas and I am proud of my
+skills in the following</p>
+  </div>
+
+<div class="fow_box">
 
 
-    <div class="int_pro_finish ">
-			<div class="container">
-				<div class="int_heading">
-					<h2>Products by Finish</h2>
-				</div>
-				<div class="int_all_service2">
-					<div class="row justify-content-center">
-						<div class=" col-md-4 col-sm-4 col-6">
-							<div class="int_pro_box">
-								<div class="int_pro">
-									<a href="#"><img src="{{ asset('front/images/int_about02.jpg')}}"></a>
-								</div>
-								<div class="bottom_content">
-									<h4>Stones</h4>
-								</div>
-							</div>
-						</div>
-						<div class=" col-md-4 col-sm-4 col-6">
-							<div class="int_pro_box">
-								<div class="int_pro">
-									<a href="#"><img src="{{ asset('front/images/int_about02.jpg')}}"></a>
-								</div>
-								<div class="bottom_content">
-									<h4>Fabric</h4>
-								</div>
-							</div>
-						</div>
-						<div class=" col-md-4 col-sm-4 col-6">
-							<div class="int_pro_box">
-								<div class="int_pro">
-									<a href="#"><img src="{{ asset('front/images/int_about02.jpg')}}"></a>
-								</div>
-								<div class="bottom_content">
-									<h4>Wood</h4>
-								</div>
-							</div>
-						</div>
-						<div class=" col-md-4 col-sm-4 col-6">
-							<div class="int_pro_box">
-								<div class="int_pro">
-									<a href="#"><img src="{{ asset('front/images/int_about02.jpg')}}"></a>
-								</div>
-								<div class="bottom_content">
-									<h4>Absorbent / Patterns</h4>
-								</div>
-							</div>
-						</div>
-						<div class=" col-md-4 col-sm-4 col-6">
-							<div class="int_pro_box">
-								<div class="int_pro">
-									<a href="#"><img src="{{ asset('front/images/int_about02.jpg')}}"></a>
-								</div>
-								<div class="bottom_content">
-									<h4>Plain</h4>
-								</div>
-							</div>
-						</div>
-						<div class=" col-md-4 col-sm-4 col-6">
-							<div class="int_pro_box">
-								<div class="int_pro">
-									<a href="#"><img src="{{ asset('front/images/int_about02.jpg')}}"></a>
-								</div>
-								<div class="bottom_content">
-									<h4>Pastels</h4>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-
-    <!--===Start About Section===-->
-    <div class="int_about_wrapper">
-    <div class="container">
-      <div class="about_box_wrapper">
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12 order-last">
-            <div class="about_contentbox">
-              <div class="about_content">
-                <div class="int_heading">
-                  <h4>About US</h4>
-                  <h2>Why Airolam?</h2>
-                </div>
-                <p class="about_deatils">Airolam is a young and growing company with commendable 12+
-                  years of experience in the laminates industry. Established in 2008, today
-                  Airolam and its products reach over 18 countries all around the world. On the
-                  domestic front it has 10+ company depots, 100+ authorized distributors and 5000+
-                  dealers. </p>
-                <p class="about_deatils">Airolam has two state of the art manufacturing facilities
-                  dedicated to
-                  the production of laminates. With 4 presses, the annual combined capacity of
-                  these facilities in 19 million sq. meter in addition, Airolam also boasts of a
-                  highly advanced plywood manufacturing facility.</p>
-                <a href="#" class="int_btn">Know more <span class="btn_caret"><i
-                      class="fas fa-caret-right"></i></span></a>
-              </div>
+  <div class="position-relative pt-0 mt-md-n8 z-index-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row equl-box g-0 box-shadow">
+          <div class="col-lg-4 col-md-5 theme-bg">
+            <div class="box_color quile-cont wow fadeInLeft" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
+            <div class="section-title mb-2">
+              <h2 class="title">Our Core Services</h2>
             </div>
+            <p class="line-h-3 text-rgba">Team ARV-CA has more than 10 partners, all seasoned professionals having extensive experience in various fields such as Insolvency Laws, Corporate Laws, Taxation, Corporate Management, Business Planning & Strategies, Banking & Finance, Mergers & Acquisitions etc.
+</p>
+            <div class="buton_about">
+  <a class="btn btn-gradient btn-md btn-animated-none btn-one al_btn" href="#" target="_blank" tabindex="-1"> Vew More  </a>
+</div>
+           </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="about_imgbox">
-              <div class="about_img">
-                <img src="{{ asset('front/images/int_about01.jpg')}}" class="img-fluid parent_img" alt="image">
-                <div class="child_imgbox">
-                  <img src="{{ asset('front/images/int_about02.jpg')}}" class="img-fluid child_img"
-                    alt="image">
+          <div class="col-lg-8 col-md-7 white-bg wow fadeInRight" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
+            <div class="w-100">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 mt-4 mt-md-0 align-self-stretch tile-outer">
+                  <div class="featured-item quile-cont">
+                    <div class="featured-icon"> <img src="images/hand.png">
+                    </div>
+                    <div class="featured-title">
+                      <h5>Corporate Insolvency<br> Resolution Process
+</h5>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mt-4 mt-md-0 align-self-stretch tile-outer">
+                  <div class="featured-item quile-cont">
+                    <div class="featured-icon"> <img src="images/process.png">
+                    </div>
+                    <div class="featured-title">
+                      <h5>Liquidation<br> Process</h5>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mt-4 align-self-stretch tile-outer">
+                  <div class="featured-item quile-cont">
+                    <div class="featured-icon"> <img src="images/c.png">
+                    </div>
+                    <div class="featured-title">
+                      <h5>Corporate <br>Restructuring</h5>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mt-4 align-self-stretch tile-outer">
+                  <div class="featured-item quile-cont">
+                    <div class="featured-icon"> <img src="images/m.png">
+                    </div>
+                    <div class="featured-title">
+                      <h5>Operations &<br> Management</h5>
+                    </div>
+
+
+                  </div>
                 </div>
               </div>
             </div>
@@ -434,27 +186,470 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+  </div>
+
+</div>
+
+
+
     </div>
-    <!--===End Start About Section===-->
+  </div>
+</section>
 
 
-</div>
-<!--===End Start Testimonial Section===-->
-@if(!empty($certifications))
-<div class="int_dark_client_section">
+<section class="team_block wow fadeInUp" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
+  <div class="sp">
 <div class="container">
-  <div class="int_heading">
-    <h2>Certifications</h2>
-  </div>
-  <div class="int_client_logo_section_style2">
-    <ul>
-      @foreach($certifications as $certification)
-      <li><img src="{{url('storage/certification/'.$certification->image)}}" class="img-fluid" alt="image"></li>
-      @endforeach
-    </ul>
-  </div>
-</div>
-</div>
-@endif
 
+<div class="row">
+
+<div class="hding">
+   <h1>OUR<span> TEAM</span></h1>
+    <p class="tem_d">I am a professional in several areas and I am proud of my
+skills in the following</p>
+  </div>
+</div>
+<div class="row responsive">
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="team-grid-style1 simsan_lite_box">
+                            <div class="team-item">
+                                <div class="team-inner-wrap">
+
+                                    <div class="image-wrap">
+                                        <a class="pointer-events" href="" data-effect="mfp-zoom-in"> <img src="images/team2.jpg"> </a>
+                                        <div class="social-icons1">
+                                            <a href="" class="social-icon"> <i class="fa fa-adjust"></i> </a>
+                                            <a href="" class="social-icon"> <i class="fab fa-twitter"></i> </a>
+                                            <a href="" class="social-icon"> <i class="fab fa-linkedin"></i> </a>
+                                            <a href="" class="social-icon"> <i class="fab fa-codepen"></i> </a>
+                                        </div>
+                                    </div><div class="team-content">
+                                        <div class="member-desc">
+                                            <h3 class="team-name"><a class="pointer-events" href="">Erfan Khan</a></h3>
+                                            <span class="team-title">Migration Agent</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="team-grid-style1 simsan_lite_box">
+                            <div class="team-item">
+                                <div class="team-inner-wrap">
+                                    <div class="image-wrap">
+                                        <a class="pointer-events" href="" data-effect="mfp-zoom-in"> <img src="images/team4.jpg"> </a>
+                                        <div class="social-icons1">
+                                            <a href="" class="social-icon"> <i class="fa fa-adjust"></i> </a>
+                                            <a href="" class="social-icon"> <i class="fab fa-twitter"></i> </a>
+                                            <a href="" class="social-icon"> <i class="fab fa-linkedin"></i> </a>
+                                            <a href="" class="social-icon"> <i class="fab fa-codepen"></i> </a>
+                                        </div>
+                                    </div>
+                                    <div class="team-content">
+                                        <div class="member-desc">
+                                            <h3 class="team-name"><a class="pointer-events" href="">Erfan Khan</a></h3>
+                                            <span class="team-title">Migration Agent</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="team-grid-style1 simsan_lite_box">
+                            <div class="team-item">
+                                <div class="team-inner-wrap">
+                                    <div class="image-wrap">
+                                        <a class="pointer-events" href="" data-effect="mfp-zoom-in"> <img src="images/team3.jpg"> </a>
+                                        <div class="social-icons1">
+                                            <a href="" class="social-icon"> <i class="fa fa-adjust"></i> </a>
+                                            <a href="" class="social-icon"> <i class="fab fa-twitter"></i> </a>
+                                            <a href="" class="social-icon"> <i class="fab fa-linkedin"></i> </a>
+                                            <a href="" class="social-icon"> <i class="fab fa-codepen"></i> </a>
+                                        </div>
+                                    </div>
+                                    <div class="team-content">
+                                        <div class="member-desc">
+                                            <h3 class="team-name"><a class="pointer-events" href="">Erfan Khan</a></h3>
+                                            <span class="team-title">Migration Agent</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="team-grid-style1 simsan_lite_box">
+                            <div class="team-item">
+                                <div class="team-inner-wrap">
+                                    <div class="image-wrap">
+                                        <a class="pointer-events" href="" data-effect="mfp-zoom-in"> <img src="images/team2.jpg"> </a>
+                                        <div class="social-icons1">
+                                            <a href="" class="social-icon"> <i class="fa fa-adjust"></i> </a>
+                                            <a href="" class="social-icon"> <i class="fab fa-twitter"></i> </a>
+                                            <a href="" class="social-icon"> <i class="fab fa-linkedin"></i> </a>
+                                            <a href="" class="social-icon"> <i class="fab fa-codepen"></i> </a>
+                                        </div>
+                                    </div>
+                                    <div class="team-content">
+                                        <div class="member-desc">
+                                            <h3 class="team-name"><a class="pointer-events" href="">Erfan Khan</a></h3>
+                                            <span class="team-title">Migration Agent</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                            <div class="tem_btn text-center">
+  <a class="btn btn-gradient btn-md btn-animated-none btn-one al_btn" href="#" target="_blank" tabindex="-1"> Vew More  </a>
+</div>
+
+</div>
+</div>
+</section>
+<section class="newsletter">
+
+  <div class="container">
+
+<div class="row">
+
+<div class="col-lg-6">
+  <div class="scrib_text">
+    <h4>Subscribe For Newsteller</h4>
+    <p>Manage Your Finance With Us</p>
+  </div>
+
+</div>
+<div class="col-lg-6">
+  <div class="scbcript_btn">
+<form class="example ryue" action="action_page.php">
+  <input type="text" placeholder="Email Address.." name="search">
+  <button type="submit">SUBCRIBE NOW</button>
+</form>
+
+
+  </div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+  </div>
+
+
+</section>
+
+<section class="expert">
+  <div class="sp">
+<div class="container">
+  <div class="hding">
+    <h1 class="hdcolor">OTHER EXPERTS</h1>
+    <p>I am a professional in several areas and I am proud of my
+skills in the following</p>
+  </div>
+
+  <div class="row pb-5">
+
+<div class="col-lg-6 col-md-6 wow fadeInLeft" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
+  <div class="custmer_block">
+    <div class="user">
+      <div class="udrimg"><img src="images/Layer 44.png"></div>
+       <div class="udrimg_text">
+         <h4>Mr. Gangadhar Rajal</h4>
+         <p>IP, FCA</p>
+       </div>
+
+
+    </div>
+<div class="strp">
+  <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+<div class="dex">
+  dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+</div>
+
+
+  </div>
+
+
+
+</div>
+
+
+<div class="col-lg-6 col-md-6 wow fadeInRight" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
+  <div class="custmer_block">
+    <div class="user">
+      <div class="udrimg"><img src="images/Layer 44.png"></div>
+       <div class="udrimg_text">
+         <h4>Mr. Gangadhar Rajal</h4>
+         <p>IP, FCA</p>
+       </div>
+
+
+    </div>
+<div class="strp">
+  <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+<div class="dex">
+  dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+</div>
+
+
+  </div>
+
+
+
+</div>
+<div class="tem_btn tem_btnbig text-center">
+  <a class="btn btn-gradient btn-md btn-animated-none btn-one al_btn" href="#" target="_blank" tabindex="-1"> View PEOPLE  </a>
+</div>
+
+
+  </div>
+
+
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="newsfeed wow fadeInUp" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
+  <div class="sp">
+  <div class="container">
+
+  <div class="hding">
+   <h1>Leatest<span> News Feeds</span></h1>
+    <p class="tem_d">I am a professional in several areas and I am proud of my
+skills in the following</p>
+  </div>
+
+<div class="row third_sp">
+
+
+<div class="col-lg-4 col-md-4 col-sm-4">
+  <div class="news-one__single">
+                                <div class="news-one__img">
+                                    <img src="images/news-one-img-4.jpg" alt="">
+                                    <a href="#">
+                                        <span class="news-one__plus"></span>
+                                    </a>
+
+                                </div>
+                                <div class="news-one__content">
+                                    <ul class="list-unstyled news-one__meta">
+                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li><a href="#"><i class="fa-solid fa-tag"></i> 2 Comments</a>
+                                        </li>
+                                        <li><a href="#"><i class="far fa-comments"></i> 2 Comments</a>
+                                        </li>
+                                    </ul>
+                                    <h3 class="news-one__title">
+                                        <a href="#">7 home trends that will shape your house in 2021</a>
+                                    </h3>
+
+                                    <div class="news-one__bottom">
+
+                                        <a href="news-details.html" class="news-one__arrow"><i class="fa-solid fa-calendar-days"></i> <span class="date_ts">June 24, 2021</span></a>
+                                          <a href="#" class="news-one__btn">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+</div>
+
+<div class="col-lg-4 col-md-4 col-sm-4">
+  <div class="news-one__single">
+                                <div class="news-one__img">
+                                    <img src="images/news-one-img-4.jpg" alt="">
+                                    <a href="#">
+                                        <span class="news-one__plus"></span>
+                                    </a>
+
+                                </div>
+                                <div class="news-one__content">
+                                    <ul class="list-unstyled news-one__meta">
+                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li><a href="#"><i class="fa-solid fa-tag"></i> 2 Comments</a>
+                                        </li>
+                                        <li><a href="#"><i class="far fa-comments"></i> 2 Comments</a>
+                                        </li>
+                                    </ul>
+                                    <h3 class="news-one__title">
+                                        <a href="#">7 home trends that will shape your house in 2021</a>
+                                    </h3>
+
+                                    <div class="news-one__bottom">
+
+                                        <a href="news-details.html" class="news-one__arrow"><i class="fa-solid fa-calendar-days"></i> <span class="date_ts">June 24, 2021</span></a>
+                                          <a href="#" class="news-one__btn">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+</div>
+
+
+
+
+<div class="col-lg-4 col-md-4 col-sm-4">
+  <div class="news-one__single">
+                                <div class="news-one__img">
+                                    <img src="images/news-one-img-4.jpg" alt="">
+                                    <a href="#">
+                                        <span class="news-one__plus"></span>
+                                    </a>
+
+                                </div>
+                                <div class="news-one__content">
+                                    <ul class="list-unstyled news-one__meta">
+                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li><a href="#"><i class="fa-solid fa-tag"></i> 2 Comments</a>
+                                        </li>
+                                        <li><a href="#"><i class="far fa-comments"></i> 2 Comments</a>
+                                        </li>
+                                    </ul>
+                                    <h3 class="news-one__title">
+                                        <a href="#">7 home trends that will shape your house in 2021</a>
+                                    </h3>
+
+                                    <div class="news-one__bottom">
+
+                                        <a href="#" class="news-one__arrow"><i class="fa-solid fa-calendar-days"></i> <span class="date_ts">June 24, 2021</span></a>
+                                          <a href="#" class="news-one__btn">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+</div>
+
+
+
+<div class="col-lg-4 col-md-4 col-sm-4">
+  <div class="news-one__single">
+                                <div class="news-one__img">
+                                    <img src="images/news-one-img-4.jpg" alt="">
+                                    <a href="#">
+                                        <span class="news-one__plus"></span>
+                                    </a>
+
+                                </div>
+                                <div class="news-one__content">
+                                    <ul class="list-unstyled news-one__meta">
+                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li><a href="#"><i class="fa-solid fa-tag"></i> 2 Comments</a>
+                                        </li>
+                                        <li><a href="#"><i class="far fa-comments"></i> 2 Comments</a>
+                                        </li>
+                                    </ul>
+                                    <h3 class="news-one__title">
+                                        <a href="#">7 home trends that will shape your house in 2021</a>
+                                    </h3>
+
+                                    <div class="news-one__bottom">
+
+                                        <a href="news-details.html" class="news-one__arrow"><i class="fa-solid fa-calendar-days"></i> <span class="date_ts">June 24, 2021</span></a>
+                                          <a href="#" class="news-one__btn">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+</section>
+
+
+
+
+<section class="form_botm">
+  <div class="container">
+
+
+<div class="row">
+
+<div class="col-lg-5 col-md-6 co-sm-6">
+<!--   <div class="lft_bl">
+    <img src="images/Layer 69.png">
+  </div> -->
+
+</div>
+
+<div class="col-lg-7 pl-5 col-sm-12 col-md-12 wow fadeInRight" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
+  <div class="formprt">
+    <h2>Get in touch</h2>
+  <form>
+  <div class="form-group">
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Full Name">
+  </div>
+   <div class="form-group">
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+   <div class="form-group">
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Phone No.">
+  </div>
+
+  <div class="form-group">
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+  <div class="tem_btn text-left">
+  <a class="btn btn-gradient btn-md btn-animated-none btn-one al_btn" href="#" target="_blank" tabindex="-1"> Submit Now  </a>
+</div>
+</form>
+</div>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+  </div>
+</section>
 @include('layouts.footer')
