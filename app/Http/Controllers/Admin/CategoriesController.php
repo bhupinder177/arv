@@ -65,14 +65,7 @@ class CategoriesController extends Controller
     {
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
-            'category_type' => 'required|string',
-            'displayOrder' => 'required',
-            'description' => 'required',
-            'thumbnail_image' => 'required',
-            'banner_image' => 'required',
-            'meta_title' => 'required',
-            'meta_description' => 'required',
-            'meta_keyword' => 'required',
+
         ]);
 
         if ($validator->fails()) {
@@ -82,66 +75,19 @@ class CategoriesController extends Controller
             return response($response);
         } else {
             $this->prefix = request()->route()->getPrefix();
-            $getThumbnailImage = NULL;
-            $getBannerImage = NULL;
 
-            if($request->hasFile('thumbnail_image')) {
-                $getUniqueNo = time();
-                $saveStorePath = "public/categories/thumbnail";
-                $attachmentDoc = $request->file('thumbnail_image');
-                $attachmentDocFilenameWithExt = $attachmentDoc->getClientOriginalName();
-                $attachmentDocFilename = pathinfo($attachmentDocFilenameWithExt, PATHINFO_FILENAME);
-                $attachmentDocFilename = str_replace(' ', '', $attachmentDocFilename);
-                $attachmentDocFilename = preg_replace('/[^A-Za-z0-9\-]/', '', $attachmentDocFilename);
-                $extension = $attachmentDoc->getClientOriginalExtension();
-                $attachmentDocFilenameToStore = $attachmentDocFilename.'_'.$getUniqueNo.'.'.$extension;
-                $attachmentDocPath = $attachmentDoc->storeAs($saveStorePath,$attachmentDocFilenameToStore);
-                $getThumbnailImage = $attachmentDocFilenameToStore;
-            }
 
-            if($request->hasFile('banner_image')) {
-                $getUniqueNo = time();
-                $saveStorePath = "public/categories/banner";
-                $attachmentDoc = $request->file('banner_image');
-                $attachmentDocFilenameWithExt = $attachmentDoc->getClientOriginalName();
-                $attachmentDocFilename = pathinfo($attachmentDocFilenameWithExt, PATHINFO_FILENAME);
-                $attachmentDocFilename = str_replace(' ', '', $attachmentDocFilename);
-                $attachmentDocFilename = preg_replace('/[^A-Za-z0-9\-]/', '', $attachmentDocFilename);
-                $extension = $attachmentDoc->getClientOriginalExtension();
-                $attachmentDocFilenameToStore = $attachmentDocFilename.'_'.$getUniqueNo.'.'.$extension;
-                $attachmentDocPath = $attachmentDoc->storeAs($saveStorePath,$attachmentDocFilenameToStore);
-                $getBannerImage = $attachmentDocFilenameToStore;
-            }
+
+
 
             $user = new Categories([
                 'name' => $request->name,
-                'displayOrder' => $request->displayOrder,
-                'category_type' => $request->category_type,
-                'description' => $request->description,
-                'thumbnail_image' => $getThumbnailImage,
-                'banner_image' => $getBannerImage,
-                'meta_title' => $request->meta_title,
-                'meta_description' => $request->meta_description,
-                'meta_keyword' => $request->meta_keyword,
+
            ]);
             $res =  $user->save();
             if($res) {
-                if($request->has('filter_type')) {
-                    $getCategoryFilters = ($request->filter_type) ?? array();
-                    $getCatId = $user->id;
-                    $saveCategoryFilter = array();
-                    foreach ($getCategoryFilters as $getCategoryFilter) {
-                        $saveCategoryFilter[] = array(
-                                                        "category_id" => $getCatId,
-                                                        "filter_type_id" => $getCategoryFilter,
-                                                        "created_at" => Carbon::now(),
-                                                        "updated_at" => Carbon::now(),
-                                                    );
-                    }
-                    if (!empty($saveCategoryFilter)) {
-                        CategoryRelationFilterType::insert($saveCategoryFilter);
-                    }
-                }
+
+
                 $response['success']         = true;
                 $response['delayTime']       = '3000';
                 $response['success_message'] = 'Categories Added Successfully.';
@@ -160,12 +106,7 @@ class CategoriesController extends Controller
     public function update(Request $request) {
         $validator = Validator::make($request->all(),[
                                                     'name' => 'required|string',
-                                                    'category_type' => 'required|string',
-                                                    'displayOrder' => 'required',
-                                                    'description' => 'required',
-                                                    'meta_title' => 'required',
-                                                    'meta_description' => 'required',
-                                                    'meta_keyword' => 'required',
+
                                                 ]);
         if ($validator->fails()) {
             $errors = $validator->errors();
@@ -176,60 +117,12 @@ class CategoriesController extends Controller
             $this->prefix = request()->route()->getPrefix();
             $id = Crypt::decrypt($request['id']);
             $data1['name'] = $request['name'];
-            $data1['displayOrder'] = $request['displayOrder'];
-            $data1['category_type'] = $request['category_type'];
-            $data1['description'] = $request['description'];
-            $data1['meta_title'] = $request['meta_title'];
-            $data1['meta_description'] = $request['meta_description'];
-            $data1['meta_keyword'] = $request['meta_keyword'];
 
-            if($request->hasFile('thumbnail_image')) {
-                $getUniqueNo = time();
-                $saveStorePath = "public/categories/thumbnail";
-                $attachmentDoc = $request->file('thumbnail_image');
-                $attachmentDocFilenameWithExt = $attachmentDoc->getClientOriginalName();
-                $attachmentDocFilename = pathinfo($attachmentDocFilenameWithExt, PATHINFO_FILENAME);
-                $attachmentDocFilename = str_replace(' ', '', $attachmentDocFilename);
-                $attachmentDocFilename = preg_replace('/[^A-Za-z0-9\-]/', '', $attachmentDocFilename);
-                $extension = $attachmentDoc->getClientOriginalExtension();
-                $attachmentDocFilenameToStore = $attachmentDocFilename.'_'.$getUniqueNo.'.'.$extension;
-                $attachmentDocPath = $attachmentDoc->storeAs($saveStorePath,$attachmentDocFilenameToStore);
-                $data1['thumbnail_image'] = $attachmentDocFilenameToStore;
-            }
 
-            if($request->hasFile('banner_image')) {
-                $getUniqueNo = time();
-                $saveStorePath = "public/categories/banner";
-                $attachmentDoc = $request->file('banner_image');
-                $attachmentDocFilenameWithExt = $attachmentDoc->getClientOriginalName();
-                $attachmentDocFilename = pathinfo($attachmentDocFilenameWithExt, PATHINFO_FILENAME);
-                $attachmentDocFilename = str_replace(' ', '', $attachmentDocFilename);
-                $attachmentDocFilename = preg_replace('/[^A-Za-z0-9\-]/', '', $attachmentDocFilename);
-                $extension = $attachmentDoc->getClientOriginalExtension();
-                $attachmentDocFilenameToStore = $attachmentDocFilename.'_'.$getUniqueNo.'.'.$extension;
-                $attachmentDocPath = $attachmentDoc->storeAs($saveStorePath,$attachmentDocFilenameToStore);
-                $data1['banner_image'] = $attachmentDocFilenameToStore;
-            }
 
             $res = Categories::where('id',$id)->update($data1);
             if($res) {
-                if($request->has('filter_type')) {
-                    $getCategoryFilters = ($request->filter_type) ?? array();
-                    $getCatId = $id;
-                    CategoryRelationFilterType::where('category_id',$getCatId)->delete();
-                    $saveCategoryFilter = array();
-                    foreach ($getCategoryFilters as $getCategoryFilter) {
-                        $saveCategoryFilter[] = array(
-                                                        "category_id" => $getCatId,
-                                                        "filter_type_id" => $getCategoryFilter,
-                                                        "created_at" => Carbon::now(),
-                                                        "updated_at" => Carbon::now(),
-                                                    );
-                    }
-                    if (!empty($saveCategoryFilter)) {
-                        CategoryRelationFilterType::insert($saveCategoryFilter);
-                    }
-                }
+            
                 $response['success']         = true;
                 $response['delayTime']       = '3000';
                 $response['success_message'] = 'Category Updated Successfully.';

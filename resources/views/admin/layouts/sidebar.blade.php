@@ -23,20 +23,24 @@
 
 
 
-        <li <?php if(request()->segment(2) == "settings" ){ ?>class="active" <?php } ?>>
-            <a href="{{route('settings.index')}}">
-                <span><i class="fa fa-cog" aria-hidden="true"></i><span class="lbl">General Settings</span></span>
-            </a>
-        </li>
-        
-        <li <?php if(request()->segment(2) == "page" ){ ?>class="active" <?php } ?>>
-            <a href="{{route('page.index')}}">
-                <span><i class="fa fa-tasks" aria-hidden="true"></i><span class="lbl">Pages</span></span>
+        <li <?php if(request()->segment(2) == "categories" ){ ?>class="active" <?php } ?>>
+            <a href="{{URL::to('/admin/categories')}}">
+                <span><i class="fa fa-tasks" aria-hidden="true"></i><span class="lbl">Categories</span></span>
             </a>
         </li>
         <li <?php if(request()->segment(2) == "blog" ){ ?>class="active" <?php } ?>>
             <a href="{{route('blog.index')}}">
                 <span><i class="fa fa-tasks" aria-hidden="true"></i><span class="lbl">Blogs</span></span>
+            </a>
+        </li>
+        <li <?php if(request()->segment(2) == "allied-laws" ){ ?>class="active" <?php } ?>>
+            <a href="{{route('allied-laws.index')}}">
+                <span><i class="fa fa-tasks" aria-hidden="true"></i><span class="lbl">Allied laws</span></span>
+            </a>
+        </li>
+        <li <?php if(request()->segment(2) == "knowledge-legal" ){ ?>class="active" <?php } ?>>
+            <a href="{{route('knowledge-legal.index')}}">
+                <span><i class="fa fa-tasks" aria-hidden="true"></i><span class="lbl">Knowledge Legal</span></span>
             </a>
         </li>
     </ul>

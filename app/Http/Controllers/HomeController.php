@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Home;
-use App\Model\Certification;
-use App\Model\Commitees;
-use App\Model\Resources;
+
 
 class HomeController extends Controller
 {
@@ -27,59 +24,70 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $result = Home::first();
-        $certifications = Certification::where('status','1')->orderby('displayOrder','ASC')->get();
 
-        return view('front.home.home',['home'=>$result,'certifications'=>$certifications]);
+
+        return view('front.home.home');
     }
 
-    public function insipirations()
+    public function arvca()
     {
-        return view('front.insipiration.insipiration');
+        return view('front.arvca.arvca');
     }
 
-    public function infrastructure()
+    public function vision()
     {
-        return view('front.infrastructure.infrastructure');
+        return view('front.vision.vision');
     }
 
-    public function export()
+    public function coreteam()
     {
-        return view('front.export.export');
+        return view('front.coreteam.coreteam');
     }
-    public function download()
+
+    public function supportingProfessionals()
     {
-        return view('front.download.download');
+        return view('front.supportingProfessionals.supportingProfessionals');
     }
 
-    public function resource()
+    public function sectoralExperience()
     {
-        return view('front.resource.resource');
+        return view('front.sectoralExperience.sectoralExperience');
     }
 
-    public function visualizers()
+
+    public function ibcRelated()
     {
-        return view('front.visualizer.visualizer');
+        return view('front.ibcRelated.ibcRelated');
     }
 
-    public function investors()
+    public function otherService()
     {
-      $bob = Commitees::where('type',1)->orderby('displayOrder','ASC')->get();
-      $commitee = Commitees::where('type',2)->orderby('displayOrder','ASC')->get();
-      $resource = Resources::with('resourceAllAttachments')->where('status','1')->orderby('display_order','ASC')->get();
-
-      return view('front.investors.investors',['bob'=>$bob,'commitee'=>$commitee,'resource'=>$resource]);
+        return view('front.otherService.otherService');
     }
 
-    public function whereToBuy()
+
+    public function knowledgeLegal()
     {
-        return view('front.where-to-buy.where-to-buy');
+        return view('front.knowledgeLegal.knowledgeLegal');
     }
 
-    public function healthcare()
+    public function ibcRelated2()
     {
-      return view('front.healthcare.healthcare');
-
+        return view('front.ibcRelated2.ibcRelated');
     }
+
+    public function alliedLaws()
+    {
+        return view('front.alliedLaws.alliedLaws');
+    }
+
+    public function blog()
+    {
+        return view('front.blog.blog');
+    }
+
+
+
+
 
 }

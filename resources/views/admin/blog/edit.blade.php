@@ -18,29 +18,15 @@
                             <input type="text" class="form-control" name="title" id="title" value="{{($result->title) ?? ''}}">
                         </div>
                     </div>
+
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label>Status <span class="red">*</span></label>
-                            <select class="form-control" name="status" id="status">
-                                <option value="">Select Status</option>
-                                <option value="1" @if($result->status == 1) selected="selected" @endif>Active</option>
-                                <option value="0" @if($result->status == 0) selected="selected" @endif>In-Active</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                          <label>Category Thumbnail Image<span class="red">*</span></label>
+                          <label>Image<span class="red">*</span></label>
                           <input type="file"  class="form-control "  name="blog_image"   id="blog_image">
                           <img src="{{url('storage/blog/'.$result->image)}}" width="150px;" />
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                          <label>Display Order<span class="red">*</span></label>
-                            <input type="text" value="{{ $result->displayOrder }}"  class="form-control numberonly " name="displayOrder"   id="displayOrder" placeholder="Please enter display order">
-                        </div>
-                    </div>
+                  
                     <div class="col-sm-12">
                         <div class="form-group">
                             <label>Description <span class="red">*</span></label>

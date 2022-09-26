@@ -17,28 +17,14 @@
                             <input type="text" class="form-control" name="title" id="title">
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label>Status <span class="red">*</span></label>
-                            <select class="form-control" name="status" id="status">
-                                <option value="">Select Status</option>
-                                <option value="1">Active</option>
-                                <option value="0">In-Active</option>
-                            </select>
-                        </div>
-                    </div>
+
                     <div class="col-sm-6">
                         <div class="form-group">
                           <label>Image<span class="red">*</span></label>
     <input type="file"  class="form-control " name="blog_image"   id="blog_image">
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                          <label>Display Order<span class="red">*</span></label>
-                            <input type="text"  class="form-control numberonly " name="displayOrder"   id="displayOrder" placeholder="Please enter display order">
-                        </div>
-                    </div>
+                  
                     <div class="col-sm-12">
                         <div class="form-group">
                             <label>Description <span class="red">*</span></label>

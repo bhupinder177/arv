@@ -38,9 +38,7 @@ class BlogController extends Controller
     public function save(Request $request) {
         $validator = Validator::make($request->all(),[
                                         'title' => 'required',
-                                        'status' => 'required',
                                         'description' => 'required',
-                                        'displayOrder' => 'required',
 
                                     ]);
 
@@ -53,23 +51,20 @@ class BlogController extends Controller
             $saveData = array();
             $getTitle = (trim($request->title)) ?? "";
             $saveData['title'] = $getTitle;
-            $saveData['status'] = (trim($request->status)) ?? "";
             $saveData['description'] = (trim($request->description)) ?? "";
-            $saveData['displayOrder'] = (trim($request->displayOrder)) ?? "";
 
 
-            if($request->hasFile('blog_image')) {
-                $getUniqueNo = time();
-                $saveStorePath = "public/blog";
-                $attachmentDoc = $request->file('blog_image');
-                $attachmentDocFilenameWithExt = $attachmentDoc->getClientOriginalName();
-                $attachmentDocFilename = pathinfo($attachmentDocFilenameWithExt, PATHINFO_FILENAME);
-                $attachmentDocFilename = str_replace(' ', '', $attachmentDocFilename);
-                $attachmentDocFilename = preg_replace('/[^A-Za-z0-9\-]/', '', $attachmentDocFilename);
-                $extension = $attachmentDoc->getClientOriginalExtension();
-                $attachmentDocFilenameToStore = $attachmentDocFilename.'_'.$getUniqueNo.'.'.$extension;
-                $attachmentDocPath = $attachmentDoc->storeAs($saveStorePath,$attachmentDocFilenameToStore);
-                $saveData['image'] = $attachmentDocFilenameToStore;
+            if($request->hasFile('blog_image'))
+            {
+                $request->file('data_name');
+                $licf     = 'image-'.time();
+                $files        = $request->file('blog_image');
+                $name         = $files->getClientOriginalName();
+                $extension    = $files->extension();
+                $type         = explode('.',$name);
+                $files->move(public_path().'/blog/', $licf.'.'.$extension);
+                $image = $licf.'.'.$extension;
+                $saveData['image'] = $image;
             }
 
             if ($request->has('id')) {
@@ -106,9 +101,8 @@ class BlogController extends Controller
     public function update(Request $request) {
         $validator = Validator::make($request->all(),[
                                         'title' => 'required',
-                                        'status' => 'required',
                                         'description' => 'required',
-                                        'displayOrder' => 'required',
+
 
                                     ]);
 
@@ -127,17 +121,15 @@ class BlogController extends Controller
 
 
             if($request->hasFile('blog_image')) {
-                $getUniqueNo = time();
-                $saveStorePath = "public/blog";
-                $attachmentDoc = $request->file('blog_image');
-                $attachmentDocFilenameWithExt = $attachmentDoc->getClientOriginalName();
-                $attachmentDocFilename = pathinfo($attachmentDocFilenameWithExt, PATHINFO_FILENAME);
-                $attachmentDocFilename = str_replace(' ', '', $attachmentDocFilename);
-                $attachmentDocFilename = preg_replace('/[^A-Za-z0-9\-]/', '', $attachmentDocFilename);
-                $extension = $attachmentDoc->getClientOriginalExtension();
-                $attachmentDocFilenameToStore = $attachmentDocFilename.'_'.$getUniqueNo.'.'.$extension;
-                $attachmentDocPath = $attachmentDoc->storeAs($saveStorePath,$attachmentDocFilenameToStore);
-                $saveData['image'] = $attachmentDocFilenameToStore;
+              $request->file('data_name');
+              $licf     = 'image-'.time();
+              $files        = $request->file('blog_image');
+              $name         = $files->getClientOriginalName();
+              $extension    = $files->extension();
+              $type         = explode('.',$name);
+              $files->move(public_path().'/blog/', $licf.'.'.$extension);
+              $image = $licf.'.'.$extension;
+              $saveData['image'] = $image;
             }
 
             if ($request->has('id')) {

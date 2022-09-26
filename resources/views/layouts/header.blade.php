@@ -105,7 +105,7 @@
 			        <div class="col-12">
 			          <nav class="navbar navbar-expand-lg navbar-light">
 
-			            <a class="navbar-brand" href="#" target="_blank"><img src="images/hdlogo.png" alt=""></a>
+			            <a class="navbar-brand" href="{{URL::to('/')}}" ><img src="{{ asset('front/images/logo.png') }}" alt=""></a>
 
 			            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			              <span class="navbar-toggler-icon"></span>
@@ -113,18 +113,18 @@
 
 			            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			              <ul class="navbar-nav ml-auto py-4 py-md-0">
-			                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active"><a class="nav-link" href="index.html">Home</a>
+			                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active"><a class="nav-link" href="{{URL::to('/')}}">Home</a>
 
 			                </li>
 			                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-			                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="arvca.html" role="button" aria-haspopup="true" aria-expanded="false"> About Us </a>
+			                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{route('arvca')}}" role="button" aria-haspopup="true" aria-expanded="false"> About Us </a>
 
 			                  <div class="dropdown-menu">
-			                    <a class="dropdown-item" href="arvca.html">About ARV-CA</a>
-			                    <a class="dropdown-item" href="vision.html">Our Mission, Vision & ideology</a>
-			                    <a class="dropdown-item" href="coreteam.html">Core Team</a>
-			                    <a class="dropdown-item" href="Supporting-Professionals.html">Supporting Professionals</a>
-			                    <a class="dropdown-item" href="Sectoral Experience.html">Sectoral Experience</a>
+			                    <a class="dropdown-item" href="{{route('arvca')}}">About ARV-CA</a>
+			                    <a class="dropdown-item" href="{{route('vision')}}">Our Mission, Vision & ideology</a>
+			                    <a class="dropdown-item" href="{{route('coreteam')}}">Core Team</a>
+			                    <a class="dropdown-item" href="{{route('supporting-professionals')}}">Supporting Professionals</a>
+			                    <a class="dropdown-item" href="{{route('sectoral-experience')}}">Sectoral Experience</a>
 
 			                  </div>
 
@@ -132,27 +132,27 @@
 			               <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 			                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">  Our Service</a>
 			                   <div class="dropdown-menu">
-			                    <a class="dropdown-item" href="IBC-related.html">IBC related</a>
-			                    <a class="dropdown-item" href="other-service.html">Other Service</a>
+			                    <a class="dropdown-item" href="{{route('ibc-related')}}">IBC related</a>
+			                    <a class="dropdown-item" href="{{route('other-service')}}">Other Service</a>
 			                  </div>
 
 			                </li>
 			                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-			                  <a class="nav-link" href="Knowledge-Legal.html"> Knowledge Centre </a>
+			                  <a class="nav-link" href="{{route('knowledge-legal')}}"> Knowledge Centre </a>
 
 			                </li>
 			                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 			                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> legal Framework</a>
 			                    <div class="dropdown-menu">
-			                    <a class="dropdown-item" href="IBC-related2.html">IBC related</a>
-			                    <a class="dropdown-item" href="Allied-Laws.html">Allied Laws</a>
+			                    <a class="dropdown-item" href="{{route('ibc-related2')}}">IBC related</a>
+			                    <a class="dropdown-item" href="{{route('allied-laws')}}">Allied Laws</a>
 			                  </div>
 			                </li>
 			                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-			                  <a class="nav-link" href="contactus.html">Contact</a>
+			                  <a class="nav-link" href="{{route('contact-us')}}">Contact</a>
 			                </li>
 			                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-			                  <a class="nav-link" href="blog.html">Blog</a>
+			                  <a class="nav-link" href="{{route('blog')}}">Blog</a>
 			                </li>
 			<button class="btn btn-outline-success my-2 my-sm-0 coit lpg" type="submit" data-toggle="modal" data-target="#exampleModal">Get In Touch</button>
 

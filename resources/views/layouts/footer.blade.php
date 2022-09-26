@@ -1,4 +1,4 @@
-<!-- ---------------------------footer part start------------------------------------------- -->
+
 
 <div class="footer-middle">
             <div class="container">
@@ -10,7 +10,7 @@
                             <div class="about-footer">
                                 <div class="footer-widget address">
                                     <div class="footer-logo">
-                                        <img src="images/logo.png" alt="">
+                                        <img src="{{ asset('front/images/logo.png') }}" alt="">
                                         <p>Lorem ipsum dolor sit amet, consetur acing elit, sed do eiusmod ligal</p>
                                     </div>
                                     <div class="footer-address">
@@ -33,12 +33,12 @@
                             <h2 class="widget-title">Help Links</h2>
                             <div class="menu-help-link-container">
                                 <ul id="menu-help-link" class="menu">
-                                    <li id="menu-item-1220" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1220"><a href="index.html">Home</a></li>
-                                    <li id="menu-item-1221" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1221"><a href="arvca.html">About  </a></li>
-                                    <li id="menu-item-1222" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1222"><a href="IBC-related.html"> Our Service</a></li>
-                                    <li id="menu-item-1223" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1223"><a href="Knowledge-Legal.html">Knowledge Centre</a></li>
-                                    <li id="menu-item-1224" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1224"><a href="IBC-related2.html"> legal Framework</a></li>
-                            <li id="menu-item-1224" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1224"><a href="blog.html">Blog</a></li>
+                                    <li id="menu-item-1220" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1220"><a href="{{URL::to('/')}}">Home</a></li>
+                                    <li id="menu-item-1221" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1221"><a href="{{route('arvca')}}">About  </a></li>
+                                    <li id="menu-item-1222" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1222"><a href="{{route('ibc-related')}}"> Our Service</a></li>
+                                    <li id="menu-item-1223" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1223"><a href="{{route('knowledge-legal')}}">Knowledge Centre</a></li>
+                                    <li id="menu-item-1224" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1224"><a href="{{route('ibc-related')}}"> legal Framework</a></li>
+                            <li id="menu-item-1224" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1224"><a href="{{route('blog')}}">Blog</a></li>
 
 
                                 </ul>
@@ -118,7 +118,7 @@
                 </div>
             </div>
         </div>
-      
+
 
 
     <script src="{{ asset('front/js/jquery-3.2.1.slim.min.js')}}"></script>

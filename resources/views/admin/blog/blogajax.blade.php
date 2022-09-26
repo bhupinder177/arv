@@ -17,13 +17,7 @@
                     <td>
                         {{$u->title}}
                     </td>
-                    <td>
-                        @if($u->status == 1)
-                            Active
-                        @else
-                            In-Active
-                        @endif
-                    </td>
+                    
                     <td >
                         <a href="{{route('page.edit', ['id' => Crypt::encrypt($u->id)])}}"><i class="fa fa-edit"></i></a>
                         <a class="deleterecord" data-link="{{route('page.delete')}}" data-id="{{$u->id}}"><i class="fa fa-trash deleterecord"  data-link="{{route('page.delete')}}"  data-id="{{$u->id}}" aria-hidden="true"></i></a>

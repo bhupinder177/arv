@@ -11,7 +11,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-6">
-              <form action="{{URL::to('/categories')}}" method="get">
+                {{--<form action="{{URL::to('/categories')}}" method="get">
                 <div class="row">
             <div class="col-md-7">
               <div class="form-group">
@@ -30,7 +30,7 @@
               </div>
             </div>
            </div>
-          </form>
+          </form>--}}
           </div>
           <div class="col-md-6">
             <div class="refer-btn">

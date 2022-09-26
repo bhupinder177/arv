@@ -18,7 +18,7 @@
 
                                         </p>
                                         <div class="hedr_btn">
-                                        <a class="btn btn-gradient btn-md btn-animated-none btn-one al_btn" href="#" target="_blank" tabindex="-1"> Contact Us  </a>
+                                        <a class="btn btn-gradient btn-md btn-animated-none btn-one al_btn" href="{{route('contact-us')}}" target="_blank" tabindex="-1"> Contact Us  </a>
                                       </div>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
 
 <div class="col-lg-6">
 <div class="leftmg wow fadeInLeft" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
-  <img src="images/about.png" class="">
+  <img src="{{ asset('front/images/about.png') }}" class="">
 </div>
 </div>
 
@@ -140,7 +140,7 @@ skills in the following</p>
               <div class="row">
                 <div class="col-lg-6 col-md-6 mt-4 mt-md-0 align-self-stretch tile-outer">
                   <div class="featured-item quile-cont">
-                    <div class="featured-icon"> <img src="images/hand.png">
+                    <div class="featured-icon"> <img src="{{ asset('front/images/hand.png') }}">
                     </div>
                     <div class="featured-title">
                       <h5>Corporate Insolvency<br> Resolution Process
@@ -151,7 +151,7 @@ skills in the following</p>
                 </div>
                 <div class="col-lg-6 col-md-6 mt-4 mt-md-0 align-self-stretch tile-outer">
                   <div class="featured-item quile-cont">
-                    <div class="featured-icon"> <img src="images/process.png">
+                    <div class="featured-icon"> <img src="{{ asset('front/images/process.png') }}">
                     </div>
                     <div class="featured-title">
                       <h5>Liquidation<br> Process</h5>
@@ -161,7 +161,7 @@ skills in the following</p>
                 </div>
                 <div class="col-lg-6 col-md-6 mt-4 align-self-stretch tile-outer">
                   <div class="featured-item quile-cont">
-                    <div class="featured-icon"> <img src="images/c.png">
+                    <div class="featured-icon"> <img src="{{ asset('front/images/c.png') }}">
                     </div>
                     <div class="featured-title">
                       <h5>Corporate <br>Restructuring</h5>
@@ -171,7 +171,7 @@ skills in the following</p>
                 </div>
                 <div class="col-lg-6 col-md-6 mt-4 align-self-stretch tile-outer">
                   <div class="featured-item quile-cont">
-                    <div class="featured-icon"> <img src="images/m.png">
+                    <div class="featured-icon"> <img src="{{ asset('front/images/m.png') }}">
                     </div>
                     <div class="featured-title">
                       <h5>Operations &<br> Management</h5>
@@ -219,7 +219,7 @@ skills in the following</p>
                                 <div class="team-inner-wrap">
 
                                     <div class="image-wrap">
-                                        <a class="pointer-events" href="" data-effect="mfp-zoom-in"> <img src="images/team2.jpg"> </a>
+                                        <a class="pointer-events" href="" data-effect="mfp-zoom-in"> <img src="{{ asset('front/images/team2.jpg') }}"> </a>
                                         <div class="social-icons1">
                                             <a href="" class="social-icon"> <i class="fa fa-adjust"></i> </a>
                                             <a href="" class="social-icon"> <i class="fab fa-twitter"></i> </a>
@@ -241,7 +241,7 @@ skills in the following</p>
                             <div class="team-item">
                                 <div class="team-inner-wrap">
                                     <div class="image-wrap">
-                                        <a class="pointer-events" href="" data-effect="mfp-zoom-in"> <img src="images/team4.jpg"> </a>
+                                        <a class="pointer-events" href="" data-effect="mfp-zoom-in"> <img src="{{ asset('front/images/team4.jpg') }}"> </a>
                                         <div class="social-icons1">
                                             <a href="" class="social-icon"> <i class="fa fa-adjust"></i> </a>
                                             <a href="" class="social-icon"> <i class="fab fa-twitter"></i> </a>
@@ -264,7 +264,7 @@ skills in the following</p>
                             <div class="team-item">
                                 <div class="team-inner-wrap">
                                     <div class="image-wrap">
-                                        <a class="pointer-events" href="" data-effect="mfp-zoom-in"> <img src="images/team3.jpg"> </a>
+                                        <a class="pointer-events" href="" data-effect="mfp-zoom-in"> <img src="{{ asset('front/images/team3.jpg') }}"> </a>
                                         <div class="social-icons1">
                                             <a href="" class="social-icon"> <i class="fa fa-adjust"></i> </a>
                                             <a href="" class="social-icon"> <i class="fab fa-twitter"></i> </a>
@@ -287,7 +287,7 @@ skills in the following</p>
                             <div class="team-item">
                                 <div class="team-inner-wrap">
                                     <div class="image-wrap">
-                                        <a class="pointer-events" href="" data-effect="mfp-zoom-in"> <img src="images/team2.jpg"> </a>
+                                        <a class="pointer-events" href="" data-effect="mfp-zoom-in"> <img src="{{ asset('front/images/team2.jpg') }}"> </a>
                                         <div class="social-icons1">
                                             <a href="" class="social-icon"> <i class="fa fa-adjust"></i> </a>
                                             <a href="" class="social-icon"> <i class="fab fa-twitter"></i> </a>
@@ -365,7 +365,7 @@ skills in the following</p>
 <div class="col-lg-6 col-md-6 wow fadeInLeft" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
   <div class="custmer_block">
     <div class="user">
-      <div class="udrimg"><img src="images/Layer 44.png"></div>
+      <div class="udrimg"><img src="{{ asset('front/images/Layer 44.png') }}"></div>
        <div class="udrimg_text">
          <h4>Mr. Gangadhar Rajal</h4>
          <p>IP, FCA</p>
@@ -395,7 +395,7 @@ skills in the following</p>
 <div class="col-lg-6 col-md-6 wow fadeInRight" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
   <div class="custmer_block">
     <div class="user">
-      <div class="udrimg"><img src="images/Layer 44.png"></div>
+      <div class="udrimg"><img src="{{ asset('front/images/Layer 44.png') }}"></div>
        <div class="udrimg_text">
          <h4>Mr. Gangadhar Rajal</h4>
          <p>IP, FCA</p>
@@ -454,7 +454,7 @@ skills in the following</p>
 <div class="col-lg-4 col-md-4 col-sm-4">
   <div class="news-one__single">
                                 <div class="news-one__img">
-                                    <img src="images/news-one-img-4.jpg" alt="">
+                                    <img src="{{ asset('front/images/news-one-img-4.jpg') }}" alt="">
                                     <a href="#">
                                         <span class="news-one__plus"></span>
                                     </a>
@@ -485,7 +485,7 @@ skills in the following</p>
 <div class="col-lg-4 col-md-4 col-sm-4">
   <div class="news-one__single">
                                 <div class="news-one__img">
-                                    <img src="images/news-one-img-4.jpg" alt="">
+                                    <img src="{{ asset('front/images/news-one-img-4.jpg') }}" alt="">
                                     <a href="#">
                                         <span class="news-one__plus"></span>
                                     </a>
@@ -519,7 +519,7 @@ skills in the following</p>
 <div class="col-lg-4 col-md-4 col-sm-4">
   <div class="news-one__single">
                                 <div class="news-one__img">
-                                    <img src="images/news-one-img-4.jpg" alt="">
+                                    <img src="{{ asset('front/images/news-one-img-4.jpg') }}" alt="">
                                     <a href="#">
                                         <span class="news-one__plus"></span>
                                     </a>
@@ -552,7 +552,7 @@ skills in the following</p>
 <div class="col-lg-4 col-md-4 col-sm-4">
   <div class="news-one__single">
                                 <div class="news-one__img">
-                                    <img src="images/news-one-img-4.jpg" alt="">
+                                    <img src="{{ asset('front/images/news-one-img-4.jpg') }}" alt="">
                                     <a href="#">
                                         <span class="news-one__plus"></span>
                                     </a>
