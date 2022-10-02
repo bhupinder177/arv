@@ -38,7 +38,7 @@
                                     <li id="menu-item-1222" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1222"><a href="{{route('ibc-related')}}"> Our Service</a></li>
                                     <li id="menu-item-1223" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1223"><a href="{{route('knowledge-legal')}}">Knowledge Centre</a></li>
                                     <li id="menu-item-1224" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1224"><a href="{{route('ibc-related')}}"> legal Framework</a></li>
-                            <li id="menu-item-1224" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1224"><a href="{{route('blog')}}">Blog</a></li>
+                            <li id="menu-item-1224" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1224"><a href="{{route('blogs')}}">Blog</a></li>
 
 
                                 </ul>
@@ -120,13 +120,18 @@
         </div>
 
 
+        <script src="{{ asset('admin/js/lib/jquery/jquery-3.2.1.min.js') }}"></script>
 
-    <script src="{{ asset('front/js/jquery-3.2.1.slim.min.js')}}"></script>
+    <!-- <script src="{{ asset('front/js/jquery-3.2.1.slim.min.js')}}"></script> -->
     <script  src="{{ asset('front/js/index.js')}}"></script>
     <script src="{{ asset('front/js/popper.min.js')}}"></script>
     <script src="{{ asset('front/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('front/js/slick.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('front/js/custom-slider.js')}}"></script>
+    <script src="{{ asset('admin/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('admin/js/jquery.toast.js') }}"></script>
+    <script src="{{ asset('admin/js/custom.js') }}"></script>
+
      <script>
 
 $(window).scroll(function(){
@@ -138,7 +143,7 @@ $(window).scroll(function(){
 });
 
 </script>
-<script src="js/wow.min.js"></script>
+<script src="{{ asset('front/js/wow.min.js') }}"></script>
               <script>
               new WOW().init();
               </script>

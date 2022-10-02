@@ -31,13 +31,31 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $setting =  Settings::first();
-        return view('front.contact.contact',['setting'=>$setting]);
+
+        return view('front.contact.contact');
     }
 
     public function contactSave(Request $request)
     {
-        $mailData = array('email'=>$request->email,'name'=>$request->name,'message'=>$request->message);
+        $validator = Validator::make($request->all(),[
+        'name' => 'required',
+        'email' => 'required',
+        'subject' => 'required',
+        'phone' => 'required',
+        'message' => 'required',
+
+        ]);
+
+        if ($validator->fails()) {
+        $errors = $validator->errors();
+        $response['validation']  = false;
+        $response['errors']      = $errors;
+        return response($response);
+        }
+
+        else
+        {
+        $mailData = array('email'=>$request->email,'phone'=>$request->phone,'subject'=>$request->subject,'name'=>$request->name,'message'=>$request->message);
         $res = CommonHelper::sendmail('test@gmail.com', 'test','test@gmail.com',$request->firstName, 'Contact us' , ['data'=>$mailData], 'emails.contact','',$attachment=null);
         if($res)
         {
@@ -50,8 +68,46 @@ class ContactController extends Controller
          $output['formErrors'] ="true";
          $output['errors'] ="Contact form not send";
          }
-        echo json_encode($output);
-        exit;
+       }
+        return response($output);
+
+    }
+
+    public function homeSave(Request $request)
+    {
+      $validator = Validator::make($request->all(),[
+      'name' => 'required',
+      'email' => 'required',
+      'phone' => 'required',
+      'message' => 'required',
+
+      ]);
+
+      if ($validator->fails()) {
+      $errors = $validator->errors();
+      $response['validation']  = false;
+      $response['errors']      = $errors;
+      return response($response);
+      }
+
+      else
+      {
+      $mailData = array('email'=>$request->email,'name'=>$request->name,'phone'=>$request->phone,'message'=>$request->message);
+      $res = CommonHelper::sendmail('test@gmail.com', 'test','test@gmail.com',$request->firstName, 'GET IN TOUCH' , ['data'=>$mailData], 'emails.homegetintouch','',$attachment=null);
+      if($res)
+      {
+      $output['success'] ="true";
+      $output['success_message'] ="Form Submitted Successfully";
+      $output['resetform'] ='true';
+      }
+      else
+      {
+       $output['formErrors'] ="true";
+       $output['errors'] ="form not send";
+       }
+     }
+      return response($output);
+
     }
 
     public function about()
@@ -59,100 +115,45 @@ class ContactController extends Controller
         return view('front.about.about');
     }
 
-    public function mediaCenter()
+
+
+
+
+
+    public function gettouchSave(Request $request)
     {
-        $media = Media::where('type',1)->orderby('displayOrder','ASC')->get();
-        return view('front.media-center.media-center',['media'=>$media]);
-    }
+      $validator = Validator::make($request->all(),[
+      'name' => 'required',
+      'email' => 'required',
+      'message' => 'required',
 
-    public function testimonials()
-    {
-        return view('front.testimonials.testimonials');
-    }
+      ]);
 
-    public function careers()
-    {
-        $career = Career::orderby('displayOrder','ASC')->get();
-        return view('front.career.career',['career'=>$career]);
-    }
+      if ($validator->fails()) {
+      $errors = $validator->errors();
+      $response['validation']  = false;
+      $response['errors']      = $errors;
+      return response($response);
+      }
 
-    public function sendContactUs(Request $request) {
-        $validator = Validator::make($request->all(),[
-                                        'full_name' => 'required',
-                                        'last_name' => 'required',
-                                        'email' => 'required|email',
-                                        'subject' => 'required',
-                                        'message' => 'required',
-                                    ]);
-
-        if ($validator->fails()) {
-            $errors = $validator->errors();
-            $response['validation']  = false;
-            $response['errors']      = $errors;
-            return response($response);
-        } else {
-            $getFullName = $request->full_name." ".$request->last_name;
-            $getSubject = "Contact US :- ".$request->subject;
-            $toEmail = "project87458@yopmail.com";
-            $toName = "Project Data";
-            $mailData = array('email' => $request->email, 'name'=> $getFullName, 'message' => $request->message);
-            $res = CommonHelper::sendmail($toEmail, $toName, $toEmail, $toName, $getSubject , ['data'=>$mailData], 'emails.contact','',$attachment=null);
-            if($res) {
-                $response['success']         = true;
-                $response['delayTime']       = '3000';
-                $response['success_message'] = "Contact Form Submitted Successfully";
-                // $response['url'] = route('contact.us.index');
-                $response['resetform'] ='true';
-                return response($response);
-            } else {
-                $response['formErrors'] = true;
-                $response['delayTime'] = '3000';
-                $response['errors'] = "Contact form not send";
-                return response($response);
-            }
-        }
-    }
-
-
-    public function sendCarrier(Request $request) {
-        $validator = Validator::make($request->all(),[
-                                        'full_name' => 'required',
-                                        'last_name' => 'required',
-                                        'email' => 'required|email',
-                                        'phone' => 'required',
-                                        'location' => 'required',
-                                        'qualification' => 'required',
-                                        'post' => 'required',
-                                        'experience' => 'required',
-                                        'ctc' => 'required',
-                                        'expectedCtc' => 'required',
-                                    ]);
-
-        if ($validator->fails()) {
-            $errors = $validator->errors();
-            $response['validation']  = false;
-            $response['errors']      = $errors;
-            return response($response);
-        } else {
-            $getFullName = $request->full_name." ".$request->last_name;
-            $getSubject = "Carrer";
-            $toEmail = "project87458@yopmail.com";
-            $toName = "Project Data";
-            $mailData = array('email' => $request->email, 'name'=> $getFullName, 'phone' => $request->phone,'location'=>$request->location,'qualification'=>$request->qualification,'ctc'=>$request->ctc,'expectedCtc'=>$request->expectedCtc,'experience'=>$request->experience,'post'=>$request->post);
-            $res = CommonHelper::sendmail($toEmail, $toName, $toEmail, $toName, $getSubject , ['data'=>$mailData], 'emails.career','',$attachment=null);
-            if($res) {
-                $response['success']         = true;
-                $response['delayTime']       = '3000';
-                $response['success_message'] = "Career Form Submitted Successfully";
-                $response['resetform'] ='true';
-                return response($response);
-            } else {
-                $response['formErrors'] = true;
-                $response['delayTime'] = '3000';
-                $response['errors'] = "Career form not send";
-                return response($response);
-            }
-        }
+      else
+      {
+      $mailData = array('email'=>$request->email,'name'=>$request->name,'message'=>$request->message);
+      $res = CommonHelper::sendmail('test@gmail.com', 'test','test@gmail.com',$request->name, 'Get In Touch' , ['data'=>$mailData], 'emails.getintouch','',$attachment=null);
+      if($res)
+      {
+      $output['success'] ="true";
+      $output['modelhide'] ="#exampleModal";
+      $output['success_message'] ="Form Submitted Successfully";
+      $output['resetform'] ='true';
+      }
+      else
+      {
+       $output['formErrors'] ="true";
+       $output['errors'] ="Form not send";
+       }
+     }
+      return response($output);
     }
 
 }

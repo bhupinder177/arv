@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Model\Blog;
+use App\Model\Categories;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\Crypt;
@@ -32,13 +33,16 @@ class BlogController extends Controller
 
     public function add() {
         $this->prefix = request()->route()->getPrefix();
-        return view('admin.blog.add',['prefix'=>$this->prefix]);
+        $categories = Categories::get();
+        return view('admin.blog.add',['prefix'=>$this->prefix,"categories"=>$categories]);
     }
 
     public function save(Request $request) {
         $validator = Validator::make($request->all(),[
                                         'title' => 'required',
                                         'description' => 'required',
+                                        'blog_image' => 'required',
+                                        'category_id' => 'required',
 
                                     ]);
 
@@ -51,6 +55,7 @@ class BlogController extends Controller
             $saveData = array();
             $getTitle = (trim($request->title)) ?? "";
             $saveData['title'] = $getTitle;
+            $saveData['category_id'] = $request->category_id;
             $saveData['description'] = (trim($request->description)) ?? "";
 
 
@@ -95,7 +100,8 @@ class BlogController extends Controller
         $id = Crypt::decrypt($id);
         $this->prefix = request()->route()->getPrefix();
         $result = Blog::whereKey($id)->first();
-        return view('admin.blog.edit',['result'=>$result,'prefix'=>$this->prefix]);
+        $categories = Categories::get();
+        return view('admin.blog.edit',['result'=>$result,'prefix'=>$this->prefix,"categories"=>$categories]);
     }
 
     public function update(Request $request) {
@@ -115,9 +121,8 @@ class BlogController extends Controller
             $saveData = array();
             $getTitle = (trim($request->title)) ?? "";
             $saveData['title'] = $getTitle;
-            $saveData['status'] = (trim($request->status)) ?? "";
             $saveData['description'] = (trim($request->description)) ?? "";
-            $saveData['displayOrder'] = (trim($request->displayOrder)) ?? "";
+              $saveData['category_id'] = $request->category_id;
 
 
             if($request->hasFile('blog_image')) {

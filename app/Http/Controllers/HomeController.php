@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\KnowledgeLegal;
+use App\Model\AlliedLaws;
+use App\Model\Blog;
 
 
 class HomeController extends Controller
@@ -68,7 +71,8 @@ class HomeController extends Controller
 
     public function knowledgeLegal()
     {
-        return view('front.knowledgeLegal.knowledgeLegal');
+        $knowledges = KnowledgeLegal::get();
+        return view('front.knowledgeLegal.knowledgeLegal',['knowledges'=>$knowledges]);
     }
 
     public function ibcRelated2()
@@ -78,12 +82,31 @@ class HomeController extends Controller
 
     public function alliedLaws()
     {
-        return view('front.alliedLaws.alliedLaws');
+        $alliedlaws = AlliedLaws::get();
+        return view('front.alliedLaws.alliedLaws',['alliedlaws'=>$alliedlaws]);
     }
 
     public function blog()
     {
-        return view('front.blog.blog');
+        $perpage = 10;
+        $blogs = Blog::with('user','category')->orderby('id','desc')->paginate($perpage);
+        $latest = Blog::orderby('id','desc')->limit(3)->get();
+        return view('front.blog.blog',['blogs'=>$blogs,'latests'=>$latest]);
+    }
+
+    public function blogDetail($id)
+    {
+
+        $blogs = Blog::with('user','category')->where('id',$id)->first();
+
+        return view('front.blog-detail.blog-detail',['blogs'=>$blogs]);
+    }
+
+    public function knowledgeDetail($id)
+    {
+      $knowledges = KnowledgeLegal::where('id',$id)->first();
+
+      return view('front.knowledgeLegal-detail.knowledgeLegal-detail',['knowledges'=>$knowledges]);
     }
 
 

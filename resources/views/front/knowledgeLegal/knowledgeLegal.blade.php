@@ -48,77 +48,29 @@
 
         </div>
 
+@if(!empty($knowledges))
 <div class="knowled_section">
     <div class="row equl-boxmga">
-
+@foreach($knowledges as $knowledge)
         <!-- box1 -->
-
 <div class="col-lg-3 col-md-4 mb-4">
-
+    <a target="_blank" href="{{URL::to('/knowledge-detail/'.$knowledge->id)}}">
 <div class="knowl_box quile-cont2">
-    <div class="box_know_mg"><img src="{{ asset('front/images/lisbon-2022-web-tile.jpg') }}"></div>
+    <div class="box_know_mg"><img src="{{ asset('knowledge/'.$knowledge->image) }}"></div>
 
     <div class="des_knowl">
-        <h4>Seminar</h4>
-        <p>Lisbon Seminar - 13 October 2022</p>
+        <h4>{{ ucwords($knowledge->title) }}</h4>
+        <p>{!! substr(strip_tags($knowledge->description), 0, 100) !!}</p>
     </div>
+</div>
 </div>
 </div>
 <!-- end -->
-
-
-<!-- box2 -->
-
-<div class="col-lg-3 col-md-4 mb-4">
-
-<div class="knowl_box quile-cont2">
-    <div class="box_know_mg"><img src="{{ asset('front/images/cdr-picks.png') }}"></div>
-
-    <div class="des_knowl">
-        <h4>Publication</h4>
-        <p>From Hibernation to Revitalization: Analysis of Insolvency COVID-19 Response Measures and their Wind-Down</p>
-    </div>
-</div>
-</div>
-<!-- end -->
-
-
-<!-- box3 -->
-
-<div class="col-lg-3 col-md-4 mb-4">
-
-<div class="knowl_box quile-cont2">
-    <div class="box_know_mg"><img src="{{ asset('front/images/dummy341x144.jpg') }}"></div>
-
-    <div class="des_knowl">
-        <h4>Technical Paper</h4>
-        <p>Restructuring in Indonesia in Practice</p>
-    </div>
-</div>
-</div>
-<!-- end -->
-
-
-<!-- box4 -->
-
-<div class="col-lg-3 col-md-4 mb-4">
-
-<div class="knowl_box quile-cont2">
-    <div class="box_know_mg"><img src="{{ asset('front/images/lisbon-2022-web-tile.jpg') }}"></div>
-
-    <div class="des_knowl">
-        <h4>INSOL Awards</h4>
-        <p>Richard Turton Award - 2022 Winner Announced and 2021 Paper Available</p>
-    </div>
-</div>
-</div>
-<!-- end -->
-
-
-
+@endforeach
 
     </div>
 </div>
+@endif
 
 
 

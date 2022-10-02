@@ -20,38 +20,44 @@
         <div class="row">
             <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
                 <section class="blog-section">
+
+                  @if(!empty($blogs))
+                  @foreach($blogs as $b)
                     <div class="large-blog-news">
-                        <div class="date">21 <br> Apr</div>
+                        <div class="date">{{ $m = date("d", strtotime($b->created_at)) }} <br> {{ $m = date("M", strtotime($b->created_at)) }}</div>
                         <figure class="img-holder">
-                            <a href="blog-details.html"><img src="{{ asset('front/images/7.jpg') }}" alt="News"></a>
+                            <a href="{{URL::to('/blog-detail/'.$b->id)}}"><img src="{{ asset('blog/'.$b->image) }}" alt="News"></a>
                             <figcaption class="overlay">
                                 <div class="box">
                                     <div class="content">
-                                        <a href="blog-details.html"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                        <a href="{{URL::to('/blog-detail/'.$b->id)}}"><i class="fa fa-link" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </figcaption>
                         </figure>
                         <div class="lower-content">
-                            <h4><a href="blog-details.html">Experts Openion for save money for your future.</a></h4>
-                            <div class="post-meta">by Stephen Villo  |  Consulting  |  18 Comments</div>
+                            <h4><a href="blog-details.html">{{ $b->title }}</a></h4>
+                            <div class="post-meta">by {{ $b->user->firstName.' '.$b->user->lastName }}  |  {{ $b->category->name }}  |  18 Comments</div>
                             <div class="text">
-                                <p>Know how to pursue pleasure rationally seds encounter consequences mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.  </p>
+                                <p>{!! substr(strip_tags($b->description), 0, 300) !!}</p>
                             </div>
                             <div class="link">
-                                <a href="blog-details.html" class="thm-btn">Read More</a>
+                                <a href="{{URL::to('/blog-detail/'.$b->id)}}" class="thm-btn">Read More</a>
                             </div>
                         </div>
 
                     </div>
+                    @endforeach
+                    @endif
 
 
-                    <ul class="page_pagination center">
+{{ $blogs->links() }}
+                    <!-- <ul class="page_pagination center">
                         <li><a href="#" class="tran3s"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
                         <li><a href="#" class="active tran3s">1</a></li>
                         <li><a href="#" class="tran3s">2</a></li>
                         <li><a href="#" class="tran3s"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                    </ul>
+                    </ul> -->
 
                 </section>
 
@@ -85,123 +91,21 @@
                         </div>
 
                         <div class="popular-post">
+                          @if(!empty($latests))
+                          @foreach($latests as $a)
                             <div class="item">
-                                <div class="post-thumb"><a href="#"><img src="{{ asset('front/images/post-1.jpg') }}" alt=""></a></div>
-                                <a href="#"><h5>Finance &amp; legal <br>throughout project.</h5></a>
-                                <div class="post-info"><i class="fa fa-calendar"></i>Jan 08, 2017 </div>
+                                <div class="post-thumb"><a href="{{URL::to('/blog-detail/'.$a->id)}}"><img src="{{ asset('blog/'.$a->image) }}" alt=""></a></div>
+                                <a href="{{URL::to('/blog-detail/'.$a->id)}}"><h5>{{ $a->title }}</h5></a>
+                                <div class="post-info"><i class="fa fa-calendar"></i>{{ $m = date("M d, Y", strtotime($a->created_at)) }} </div>
                             </div>
-                            <div class="item">
-                                <div class="post-thumb"><a href="#"><img src="{{ asset('front/images/post-2.jpg') }}" alt=""></a></div>
-                                <a href="#"><h5>What makes us best <br>in the world? </h5></a>
-                                <div class="post-info"><i class="fa fa-calendar"></i>Dec 18, 2016</div>
-                            </div>
-                            <div class="item">
-                                <div class="post-thumb"><a href="#"><img src="{{ asset('front/images/post-3.jpg') }}" alt=""></a></div>
-                                <a href="#"><h5>Why People go with <br>Experts.</h5></a>
-                                <div class="post-info"><i class="fa fa-calendar"></i>Nov 21, 2016 </div>
-                            </div>
+                            @endforeach
+                            @endif
                         </div>
                     </div>
-                    <br>
-                    <div class="sidebar-intsgram">
-                        <div class="inner-title">
-                            <h4>Instagram</h4>
-                        </div>
-                        <ul class="list-inline clearfix">
-                            <li>
-                                <div class="inner-box">
-                                    <img src="{{ asset('front/images/i1.jpg') }}" alt="Awesome Image">
-                                    <div class="overlay">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a href="#"><i class="fa fa-link"></i></a>
-                                            </div><!-- /.content -->
-                                        </div><!-- /.box -->
-                                    </div><!-- /.overlay -->
-                                </div>
-                            </li>
-                            <li>
-                                <div class="inner-box">
-                                    <img src="{{ asset('front/images/i2.jpg') }}" alt="Awesome Image">
-                                    <div class="overlay">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a href="#"><i class="fa fa-link"></i></a>
-                                            </div><!-- /.content -->
-                                        </div><!-- /.box -->
-                                    </div><!-- /.overlay -->
-                                </div>
-                            </li>
-                            <li>
-                                <div class="inner-box">
-                                    <img src="{{ asset('front/images/i3.jpg') }}" alt="Awesome Image">
-                                    <div class="overlay">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a href="#"><i class="fa fa-link"></i></a>
-                                            </div><!-- /.content -->
-                                        </div><!-- /.box -->
-                                    </div><!-- /.overlay -->
-                                </div>
-                            </li>
-                            <li>
-                                <div class="inner-box">
-                                    <img src="{{ asset('front/images/i4.jpg') }}" alt="Awesome Image">
-                                    <div class="overlay">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a href="#"><i class="fa fa-link"></i></a>
-                                            </div><!-- /.content -->
-                                        </div><!-- /.box -->
-                                    </div><!-- /.overlay -->
-                                </div>
-                            </li>
-                            <li>
-                                <div class="inner-box">
-                                    <img src="{{ asset('front/images/i5.jpg') }}" alt="Awesome Image">
-                                    <div class="overlay">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a href="#"><i class="fa fa-link"></i></a>
-                                            </div><!-- /.content -->
-                                        </div><!-- /.box -->
-                                    </div><!-- /.overlay -->
-                                </div>
-                            </li>
-                            <li>
-                                <div class="inner-box">
-                                    <img src="{{ asset('front/images/i6.jpg') }}" alt="Awesome Image">
-                                    <div class="overlay">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a href="#"><i class="fa fa-link"></i></a>
-                                            </div><!-- /.content -->
-                                        </div><!-- /.box -->
-                                    </div><!-- /.overlay -->
-                                </div>
-                            </li>
 
 
-                        </ul>
-                    </div>
 
-                    <div class="sidebar_tags wow fadeInUp animated animated" style="visibility: visible; animation-name: fadeInUp;">
-                            <div class="inner-title">
-                            <h4>Tag Cloud </h4>
 
-                        </div>
-
-                        <ul>
-                            <li><a href="#" class="tran3s">Book</a></li>
-                            <li><a href="#" class="tran3s">Company</a></li>
-                            <li><a href="#" class="tran3s">Ideas</a></li>
-                            <li><a href="#" class="tran3s">Energy</a></li>
-                            <li><a href="#" class="tran3s">Engines</a>  </li>
-                            <li><a href="#" class="tran3s">Chemical</a></li>
-                            <li><a href="#" class="tran3s">Industry</a> </li>
-                            <li><a href="#" class="tran3s">Research</a></li>
-                        </ul>
-                    </div> <!-- End of .sidebar_tags -->
 
                 </div> <!-- End of .wrapper -->
             </div>

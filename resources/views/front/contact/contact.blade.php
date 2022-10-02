@@ -22,36 +22,32 @@
 <div class="section-title">
 <h2>Get <span class="text_col">In Touch</span></h2>
 </div>
-<form id="contactForm" novalidate="true">
+<form  class="reset" id="contactForm" action="{{route('send.contact.us')}}" method="post">
+  @csrf
 <div class="row">
 <div class="col-lg-6">
 <div class="form-group">
-<input type="text" name="name" id="name" class="form-control" placeholder="Name" required="" data-error="Please enter your name">
-<div class="help-block with-errors"></div>
+<input type="text" name="name" id="name" class="form-control" placeholder="Name">
 </div>
 </div>
 <div class="col-lg-6">
 <div class="form-group">
-<input type="email" name="email" id="email" class="form-control" placeholder="Email" required="" data-error="Please enter your email">
-<div class="help-block with-errors"></div>
+<input type="email" name="email" id="email" class="form-control" placeholder="Email" >
 </div>
 </div>
 <div class="col-lg-6">
 <div class="form-group">
-<input type="text" name="phone_number" id="phone_number" placeholder="Phone" required="" data-error="Please enter your number" class="form-control">
-<div class="help-block with-errors"></div>
+<input type="text" name="phone" id="phone" placeholder="Phone"  class="form-control">
 </div>
 </div>
 <div class="col-lg-6">
 <div class="form-group">
-<input type="text" name="msg_subject" id="msg_subject" class="form-control" placeholder="Subject" required="" data-error="Please enter your subject">
-<div class="help-block with-errors"></div>
+<input type="text" name="subject" id="subject" class="form-control" placeholder="Subject" >
 </div>
 </div>
 <div class="col-lg-12">
 <div class="form-group">
-<textarea name="message" class="form-control" id="message" cols="30" rows="8" placeholder="Write message" required="" data-error="Write your message"></textarea>
-<div class="help-block with-errors"></div>
+<textarea name="message" class="form-control" id="message" cols="30" rows="8" placeholder="Write message" ></textarea>
 </div>
 </div>
 <div class="col-lg-12 col-md-12">
@@ -61,7 +57,6 @@
 <label class="form-check-label" for="gridCheck">
 Accept <a href="terms-conditions.html">Terms of Services</a> and <a href="privacy-policy.html">Privacy Policy</a>
 </label>
-<div class="help-block with-errors gridCheck-error"></div>
 </div>
 </div>
 </div>

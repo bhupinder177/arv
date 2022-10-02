@@ -16,48 +16,7 @@ $.validator.addMethod("lettersonly", function(value, element) {
          return this.optional(element) || /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i.test(value);
       }, "Please enter a valid email address.");
 
-      $.validator.addMethod("mytst5", function (value, element) {
-        var flag = true;
-      $("[name^=taxiSection]").each(function (i, j) {
-      $(this).parent('div').find('label.has-error').remove();
-      $(this).parent('div').find('label.has-error').remove();
-      if ($.trim($(this).val()) == '')
-      {
-      flag = false;
-      $(this).parent('div').append('<label  id="taxiSection'+i+'-error" class="has-error">Please enter section.</label>');
-      }
-      });
-      return flag;
-      }, "");
 
-
-      $.validator.addMethod("mytst10", function (value, element) {
-        var flag = true;
-      $("[name^=accountId]").each(function (i, j) {
-      $(this).parent('div').find('label.has-error').remove();
-      $(this).parent('div').find('label.has-error').remove();
-      if ($.trim($(this).val()) == '')
-      {
-      flag = false;
-      $(this).parent('div').append('<label  id="vehicleNo'+i+'-error" class="has-error">Please enter accountId.</label>');
-      }
-      });
-      return flag;
-      }, "");
-
-      $.validator.addMethod("mytst11", function (value, element) {
-        var flag = true;
-      $("[name^=taxiId]").each(function (i, j) {
-      $(this).parent('div').find('label.has-error').remove();
-      $(this).parent('div').find('label.has-error').remove();
-      if ($.trim($(this).val()) == '')
-      {
-      flag = false;
-      $(this).parent('div').append('<label  id="vehicleNo'+i+'-error" class="has-error">Please select taxi.</label>');
-      }
-      });
-      return flag;
-      }, "");
     // login
     $("#loginform").validate({
       errorClass: "has-error",
@@ -185,333 +144,6 @@ submitHandler: function (form)
 
   // back
 
-// vehicle add
-$("#addcoupon").validate({
-  errorClass: "has-error",
-    highlight: function(element, errorClass) {
-        //$(element).parents('.form-group').addClass(errorClass);
-    },
-    unhighlight: function(element, errorClass, validClass) {
-      //  $(element).parents('.form-group').removeClass(errorClass);
-    },
-rules:
-{
- coupon: {
-   required: true
- },
- discount: {
-   required: true,
-   number:true,
- },
-},
-messages:
-{
- coupon: {
-   required: "Please enter coupon",
- },
- discount: {
-   required: "Please enter discount",
- },
-
-},
-submitHandler: function (form)
-{
- formSubmit(form);
-}
-});
-// vehicle add
-
-// addtestimonials add
-$("#addtestimonials").validate({
-  errorClass: "has-error",
-    highlight: function(element, errorClass) {
-        //$(element).parents('.form-group').addClass(errorClass);
-    },
-    unhighlight: function(element, errorClass, validClass) {
-      //  $(element).parents('.form-group').removeClass(errorClass);
-    },
-rules:
-{
- name: {
-   required: true
- },
- designation: {
-   required: true
- },
- description: {
-   required: true,
- },
-},
-messages:
-{
- name: {
-   required: "Please enter name",
- },
- designation: {
-   required: "Please enter designation",
- },
- description: {
-   required: "Please enter description",
- },
-},
-submitHandler: function (form)
-{
- formSubmit(form);
-}
-});
-// addtestimonials add
-
-
-
-// country
-$("#addcountry").validate({
-  errorClass: "has-error",
-    highlight: function(element, errorClass) {
-        //$(element).parents('.form-group').addClass(errorClass);
-    },
-    unhighlight: function(element, errorClass, validClass) {
-      //  $(element).parents('.form-group').removeClass(errorClass);
-    },
-rules:
-{
- name: {
-   required: true
- },
-},
-messages:
-{
- name: {
-   required: "Please enter country",
- },
-},
-submitHandler: function (form)
-{
- formSubmit(form);
-}
-});
-// country
-// addreligions
-$("#addreligions").validate({
-  errorClass: "has-error",
-    highlight: function(element, errorClass) {
-        //$(element).parents('.form-group').addClass(errorClass);
-    },
-    unhighlight: function(element, errorClass, validClass) {
-      //  $(element).parents('.form-group').removeClass(errorClass);
-    },
-rules:
-{
- name: {
-   required: true
- },
- category_type: {
-   required: true
- },
- displayOrder: {
-   required: true
- },
- description: {
-   required: true
- },
- thumbnail_image: {
-   required: true
- },
- banner_image: {
-   required: true
- },
-},
-messages:
-{
- name: {
-   required: "This is required",
- },
- category_type: {
-   required: "This is required",
- },
- displayOrder: {
-   required: "This is required",
- },
- description: {
-   required: "This is required",
- },
- thumbnail_image: {
-   required: "This is required",
- },
- banner_image: {
-   required: "This is required",
- },
-},
-submitHandler: function (form)
-{
- formSubmit(form);
-}
-});
-// addreligions
-
-
-// city
-$("#addcity").validate({
-  errorClass: "has-error",
-    highlight: function(element, errorClass) {
-        //$(element).parents('.form-group').addClass(errorClass);
-    },
-    unhighlight: function(element, errorClass, validClass) {
-      //  $(element).parents('.form-group').removeClass(errorClass);
-    },
-rules:
-{
- name: {
-   required: true
- },
-},
-messages:
-{
- name: {
-   required: "Please enter city",
- },
-},
-submitHandler: function (form)
-{
- formSubmit(form);
-}
-});
-// city
-// state
-$("#addstate").validate({
-  errorClass: "has-error",
-    highlight: function(element, errorClass) {
-        //$(element).parents('.form-group').addClass(errorClass);
-    },
-    unhighlight: function(element, errorClass, validClass) {
-      //  $(element).parents('.form-group').removeClass(errorClass);
-    },
-rules:
-{
- name: {
-   required: true
- },
- timezone: {
-   required: true
- },
-},
-messages:
-{
- name: {
-   required: "Please enter state",
- },
- timezone: {
-   required: "Please enter timezone",
- },
-},
-submitHandler: function (form)
-{
- formSubmit(form);
-}
-});
-// state
-
-// package add
-$("#addpackage").validate({
-  errorClass: "has-error",
-    highlight: function(element, errorClass) {
-        //$(element).parents('.form-group').addClass(errorClass);
-    },
-    unhighlight: function(element, errorClass, validClass) {
-      //  $(element).parents('.form-group').removeClass(errorClass);
-    },
-rules:
-{
- name: {
-   required: true,
-    lettersonly:true,
- },
- price: {
-   required: true,
-    number:true,
- },
- connects: {
-   required: true,
-    number:true,
- },
- chat: {
-   required: true,
- },
- phoneNumberDisplay: {
-   required: true,
- },
- duration: {
-   required: true,
- },
- price: {
-   required: true,
-    number:true,
- },
- description: {
-   required: true,
- },
-},
-messages:
-{
- name: {
-   required: "Please enter name",
- },
- price: {
-   required: "Please enter price",
- },
- chat: {
-   required: "This is required",
- },
- connects: {
-   required: "This is required",
- },
- phoneNumberDisplay: {
-   required: "This is required",
- },
- duration: {
-   required: "This is required",
- },
- description: {
-   required: "Please enter description",
- },
-},
-submitHandler: function (form)
-{
- formSubmit(form);
-}
-});
-// package add
-
-
-// coupon send
-// state
-$("#couponuser").validate({
-  errorClass: "has-error",
-    highlight: function(element, errorClass) {
-        //$(element).parents('.form-group').addClass(errorClass);
-    },
-    unhighlight: function(element, errorClass, validClass) {
-      //  $(element).parents('.form-group').removeClass(errorClass);
-    },
-rules:
-{
- coupon: {
-   required: true
- },
-},
-messages:
-{
- coupon: {
-   required: "Please select coupon code",
- },
-},
-submitHandler: function (form)
-{
- formSubmit(form);
-}
-});
-// state
-
-// coupon send
 
 // pagination
 jQuery('body').on('click', '.pagination1 a', function(){
@@ -656,24 +288,120 @@ submitHandler: function (form)
 });
 
 
-$("#homeUpdate").validate({
+$("#contactForm").validate({
 rules:
 {
- title: {
+ name: {
    required: true
   },
- image: {
+ email: {
+   required: true,
+   email:true,
+   regex: "",
+ },
+ phone: {
+   required: true,
+ },
+ subject: {
+   required: true,
+ },
+ message: {
    required: true,
  },
 },
 messages:
 {
 
- title: {
-   required: "Please enter tagline",
+ name: {
+   required: "Please enter name",
 },
- image: {
-   required: "Please select image",
+ email: {
+   required: "Please enter email",
+},
+ phone: {
+   required: "Please enter phone",
+},
+ subject: {
+   required: "Please enter subject",
+},
+ message: {
+   required: "Please enter message",
+},
+},
+submitHandler: function (form)
+{
+ formSubmit(form);
+}
+});
+
+
+$("#homeForm").validate({
+rules:
+{
+ name: {
+   required: true
+  },
+ email: {
+   required: true,
+   email:true,
+   regex: "",
+ },
+ phone: {
+   required: true,
+ },
+ message: {
+   required: true,
+ },
+},
+messages:
+{
+
+ name: {
+   required: "Please enter name",
+},
+ email: {
+   required: "Please enter email",
+},
+ phone: {
+   required: "Please enter phone",
+},
+ message: {
+   required: "Please enter message",
+},
+},
+submitHandler: function (form)
+{
+ formSubmit(form);
+}
+});
+
+
+$("#gettouchform").validate({
+rules:
+{
+ name: {
+   required: true
+  },
+ email: {
+   required: true,
+   email:true,
+   regex: "",
+ },
+ message: {
+   required: true,
+ },
+},
+messages:
+{
+
+ name: {
+   required: "Please enter name",
+},
+ email: {
+   required: "Please enter email",
+},
+ message: {
+   required: "Please enter comment",
 },
 },
 submitHandler: function (form)
@@ -727,126 +455,6 @@ submitHandler: function (form)
   });
     // ********************* Image read********************************
 
-// owner status change
-$('body').on('change','.ownerStatuschange',function(){
-
-  var id = $(this).attr('data-id');
-  var status = $(this).val();
-  $('.userId').val(id);
-  $('.userstatus').val(status);
-  if(status == 0)
-  {
-    $('.messagetext').text('Are you sure to change the status to InActive ?');
-  }
-  else if(status == 1)
-  {
-    $('.messagetext').text('Are you sure to change the status to Active ?');
-  }
-  if(status != '')
-  {
-  $('#confirm').modal('show');
-  }
-
-});
-
-// owner status change
-
-
-// send coupon to user
-$('body').on('click','.sendCoupon',function(){
-
-  var id = $(this).attr('data-id');
-  var name = $(this).attr('data-name');
-  var title = 'Send Coupon Code to '+name;
-  $('.coupontitle').html(title);
-  $('.couponuserId').val(id);
-  $('#couponSendUser').modal('show');
-
-});
-// send coupon to user
-
-// owner status change
-$('body').on('click','.updatestatus',function(){
-
-
-  var id = $('.userId').val();
-  var status = $('.userstatus').val();
-  if(status != '')
-  {
-  $.ajax({
-    url :base_url +'/ownerStatusUpdate',
-    type :'post',
-    data : {
-      id:id,status:status
-    },
-    enctype : 'multipart/form-data',
-   headers     : {
-     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-   },
-
-   dataType    : "json",
-    success: function(response){
-
-      $.toast().reset('all');
-    var delayTime = 3000;
-    if(response.delayTime)
-    delayTime = response.delayTime;
-    if (response.success)
-    {
-      $('#confirm').modal('hide');
-
-
-      $.toast({
-        heading             : 'Success',
-        text                : response.success_message,
-        loader              : true,
-        loaderBg            : '#fff',
-        showHideTransition  : 'fade',
-        icon                : 'success',
-        hideAfter           : delayTime,
-        position            : 'top-right'
-      });
-
-
-    }
-    else
-    {
-      //$(".button-disabled").removeAttr("disabled");
-      if( response.formErrors)
-      {
-        $.toast({
-          heading             : 'Error',
-          text                : response.errors,
-          loader              : true,
-          loaderBg            : '#fff',
-          showHideTransition  : 'fade',
-          icon                : 'error',
-          hideAfter           : delayTime,
-          position            : 'top-right'
-        });
-      }
-      else
-      {
-        jQuery('#InputEmail').val('');
-        $.toast({
-          heading             : 'Error',
-          text                : response.error_message,
-          loader              : true,
-          loaderBg            : '#fff',
-          showHideTransition  : 'fade',
-          icon                : 'error',
-          hideAfter           : delayTime,
-          position            : 'top-right'
-        });
-      }
-    }
-        }
-     });
-
-  }
-
-});
-// owner status change
     // delete vehicle from edit
     $('body').on('click','.deleterecord',function(){
 
@@ -1332,4 +940,3 @@ $(document).on('submit','.general_form',function(e){
     let form = $(this)[0];
     formSubmit(form);
 });
-

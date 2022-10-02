@@ -617,23 +617,25 @@ skills in the following</p>
 <div class="col-lg-7 pl-5 col-sm-12 col-md-12 wow fadeInRight" data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0s">
   <div class="formprt">
     <h2>Get in touch</h2>
-  <form>
+  <form class="reset" id="homeForm" action="{{route('home.form.save')}}" method="post">
+    @csrf
+
   <div class="form-group">
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Full Name">
+    <input type="text" name="name" class="form-control" id="name" placeholder="Full Name">
   </div>
    <div class="form-group">
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <input type="text" name="email" class="form-control" id="email" placeholder="name@example.com">
   </div>
    <div class="form-group">
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Phone No.">
+    <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone No.">
   </div>
 
   <div class="form-group">
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea name="message" class="form-control" id="message" rows="3"></textarea>
   </div>
 
   <div class="tem_btn text-left">
-  <a class="btn btn-gradient btn-md btn-animated-none btn-one al_btn" href="#" target="_blank" tabindex="-1"> Submit Now  </a>
+  <button class="btn btn-gradient btn-md btn-animated-none btn-one al_btn" type="submit" tabindex="-1"> Submit Now  </button>
 </div>
 </form>
 </div>

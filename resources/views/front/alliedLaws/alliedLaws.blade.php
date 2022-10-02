@@ -41,23 +41,17 @@
         <h3>Allied Laws </h3>
         <div class="row">
 
+@if(!empty($alliedlaws))
 <div class="col-lg-12">
 <div class="makeopr">
         <ul>
-            <li><a href="pdf/4New Tender notice for hiring Car.pdf"> Lorem ipsum dolor sit amet</a></li>
-            <li><a href="pdf/4New Tender notice for hiring Car.pdf">consectetur adipiscing eli</a></li>
-            <li><a href="pdf/4New Tender notice for hiring Car.pdf">Duis nec sodales purus</a></li>
-            <li><a href="pdf/4New Tender notice for hiring Car.pdf">Pellentesque ornare justo</a></li>
-            <li><a href="pdf/4New Tender notice for hiring Car.pdf">Id dui condimentum</a></li>
-            <li><a href="pdf/4New Tender notice for hiring Car.pdf">Ut tellus quam, congue a fringilla</a></li>
-            <li><a href="pdf/4New Tender notice for hiring Car.pdf">Proin ac enim mauris</a></li>
-            <li><a href="pdf/4New Tender notice for hiring Car.pdf">Sed mauris nunc, tincidunt vitae</a></li>
-            <li><a href="pdf/4New Tender notice for hiring Car.pdf">Urna ut, tempor interdum sapien</a></li>
-            <li><a href="pdf/4New Tender notice for hiring Car.pdf">Nullam risus ante, condimentum eget justo et</a></li>
+          @foreach($alliedlaws as $alliedlaw)
+            <li><a target="_blank" href="{{ asset('allied-laws/'.$alliedlaw->document) }}">{{ ucwords($alliedlaw->title) }}</a></li>
+          @endforeach
         </ul>
     </div>
-
 </div>
+@endif
 
 </div>
 

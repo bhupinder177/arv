@@ -15,6 +15,10 @@ class Blogs extends Migration
     {
       Schema::create('blogs', function (Blueprint $table) {
           $table->bigIncrements('id');
+          $table->unsignedInteger('category_id')->nullable();
+          $table->unsignedInteger('user_id')->nullable();
+          $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+          $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
           $table->string('title')->nullable();
           $table->longText('description')->nullable();
           $table->enum('status', ['0','1'])->default('0')->comment("1 = Active, 0 = In-Acive");

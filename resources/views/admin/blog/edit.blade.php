@@ -18,15 +18,29 @@
                             <input type="text" class="form-control" name="title" id="title" value="{{($result->title) ?? ''}}">
                         </div>
                     </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Category <span class="red">*</span></label>
+                            <select class="form-control" name="category_id" id="category">
+                                <option value="">Select Category</option>
+                                @if(!empty($categories))
+                                    @foreach($categories as $getCategory)
+
+                                        <option value="{{$getCategory->id}}" @if($result->category_id == $getCategory->id) selected="selected" @endif>{{$getCategory->name}}</option>
+                                    @endforeach
+                                @endif
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="col-sm-6">
                         <div class="form-group">
                           <label>Image<span class="red">*</span></label>
                           <input type="file"  class="form-control "  name="blog_image"   id="blog_image">
-                          <img src="{{url('storage/blog/'.$result->image)}}" width="150px;" />
+                          <img src="{{url('blog/'.$result->image)}}" width="150px;" />
                         </div>
                     </div>
-                  
+
                     <div class="col-sm-12">
                         <div class="form-group">
                             <label>Description <span class="red">*</span></label>
@@ -38,7 +52,7 @@
 
                 </div>
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-rounded button-disabled" >Save</button>
+                    <button type="submit" class="btn btn-rounded button-disabled" >Update</button>
                     <button type="button" class="cancel btn btn-rounded btn-default button-disabled" >Cancel</button>
                 </div>
             </form>

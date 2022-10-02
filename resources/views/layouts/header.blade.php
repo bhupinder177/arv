@@ -1,5 +1,3 @@
-
-			<link rel="stylesheet" href="{{ asset('front/css/bootstrap.min.css')}}">
 			<!doctype html>
 			<html lang="en">
 			  <head>
@@ -9,12 +7,15 @@
 			    <!-- Bootstrap CSS -->
 			   <link rel="stylesheet" href="{{ asset('front/css/bootstrap.min.css')}}">
 			       <link rel="shortcut icon" type="image/x-icon" href="images/fav.ico?v=fb84172938">
-			    <link rel="stylesheet" href="{{ asset('front/css/style1.css')}}">
+						 <link rel="stylesheet" href="{{ asset('admin/css/jquery.toast.css') }}">
+						 <link href="{{ asset('front/css/animate.min.css')}}" rel="stylesheet" type="text/css">
+
 			    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-			     <link rel="stylesheet" href="{{ asset('front/css/style.css')}}">
-			    <link rel="stylesheet" href="{{ asset('front/css/slick.css')}}"/>
+			     <link rel="stylesheet" href="{{ asset('front/css/slick.css')}}"/>
 			     <link rel="stylesheet" href="{{ asset('front/css/slick-theme.css')}}"/>
-			     <link href="{{ asset('front/css/animate.min.css')}}" rel="stylesheet" type="text/css">
+					   <link rel="stylesheet" href="{{ asset('admin/css/custom.css') }}">
+						 <link rel="stylesheet" href="{{ asset('front/css/style.css')}}">
+						 <link rel="stylesheet" href="{{ asset('front/css/style1.css')}}">
 			    <title>Home Page</title>
 			  </head>
 			  <style type="text/css">
@@ -31,13 +32,17 @@
 
 			  </style>
 			  <body>
-
+					<div class="loader_panel" style="display: none;">
+						<img src="{{ asset('admin/images/preloader.gif') }}">
+					</div>
 
 
 			<!-- Modal -->
 			<div class="cutom_formrt">
 			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div class="modal-dialog">
+					<form class="reset" id="gettouchform" action="{{route('send.gettouch')}}" method="post">
+						@csrf
 			    <div class="modal-content">
 			      <div class="modal-header">
 			        <h5 class="modal-title" id="exampleModalLabel">Get In Touch</h5>
@@ -48,24 +53,25 @@
 			      <div class="modal-body">
 			        <div class="form-group">
 			    <label for="exampleInputPassword1">Name</label>
-			    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Name">
+			    <input type="text" class="form-control" name="name" id="name" placeholder="Name">
 			  </div>
 			        <div class="form-group">
 			    <label for="exampleInputEmail1">Email address</label>
-			    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+			    <input type="text" class="form-control" name="email" id="email"  placeholder="Enter email">
 
 			  </div>
 			   <div class="form-group">
 			  <label for="comment">Comment:</label>
-			  <textarea class="form-control" rows="5" id="comment"></textarea>
+			  <textarea class="form-control" rows="5" name="message" id="comment"></textarea>
 			</div>
 
 			      </div>
 			      <div class="modal-footer">
 
-			        <button type="button" class="btn btn-primary">Submit Now</button>
+			        <button type="submit" class="btn btn-primary">Submit Now</button>
 			      </div>
 			    </div>
+				</form>
 			  </div>
 			</div>
 			</div>
@@ -145,14 +151,14 @@
 			                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> legal Framework</a>
 			                    <div class="dropdown-menu">
 			                    <a class="dropdown-item" href="{{route('ibc-related2')}}">IBC related</a>
-			                    <a class="dropdown-item" href="{{route('allied-laws')}}">Allied Laws</a>
+			                    <a class="dropdown-item" href="{{route('allied-law')}}">Allied Laws</a>
 			                  </div>
 			                </li>
 			                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 			                  <a class="nav-link" href="{{route('contact-us')}}">Contact</a>
 			                </li>
 			                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-			                  <a class="nav-link" href="{{route('blog')}}">Blog</a>
+			                  <a class="nav-link" href="{{route('blogs')}}">Blog</a>
 			                </li>
 			<button class="btn btn-outline-success my-2 my-sm-0 coit lpg" type="submit" data-toggle="modal" data-target="#exampleModal">Get In Touch</button>
 

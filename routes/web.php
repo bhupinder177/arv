@@ -14,9 +14,8 @@
 
 // Start Front End routes
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/login', 'Auth\LoginController@showlogin')->name('login');
 // End Front End routes
-Auth::routes();
+//Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -28,12 +27,15 @@ Route::get('/sectoral-experience', 'HomeController@sectoralExperience')->name('s
 Route::get('/ibc-related', 'HomeController@ibcRelated')->name('ibc-related');
 Route::get('/other-service', 'HomeController@otherService')->name('other-service');
 Route::get('/knowledge-legal', 'HomeController@knowledgeLegal')->name('knowledge-legal');
+Route::get('/knowledge-detail/{id}', 'HomeController@knowledgeDetail')->name('knowledge-detail');
 Route::get('/ibc-related2', 'HomeController@ibcRelated2')->name('ibc-related2');
-Route::get('/allied-laws', 'HomeController@alliedLaws')->name('allied-laws');
-
-Route::get('/blog','HomeController@blog')->name('blog');
+Route::get('/allied-law', 'HomeController@alliedLaws')->name('allied-law');
+Route::get('/blogs','HomeController@blog')->name('blogs');
+Route::get('/blog-detail/{id}','HomeController@blogDetail');
 Route::get('/contact-us','ContactController@index')->name('contact-us');
 Route::post('/contactSave','ContactController@contactSave')->name('send.contact.us');
+Route::post('/homeSave','ContactController@homeSave')->name('home.form.save');
+Route::post('/gettouchSave','ContactController@gettouchSave')->name('send.gettouch');
 
 
 
