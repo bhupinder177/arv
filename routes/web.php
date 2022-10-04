@@ -15,7 +15,7 @@
 // Start Front End routes
 Route::get('/', 'HomeController@index')->name('home');
 // End Front End routes
-//Auth::routes();
+Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
